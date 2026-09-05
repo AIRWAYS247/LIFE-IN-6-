@@ -1,321 +1,987 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>LIFE IN 6</title>
 
 <style>
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+html,
 body {
-    margin: 0;
-    background: #05090d;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #05090d;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+   ========================= */
 
 header {
-    background: linear-gradient(135deg, #07111b, #020304);
-    text-align: center;
-    padding: 22px 15px 18px;
-    border-bottom: 1px solid #1e3647;
+  min-height: 72px;
+  background: linear-gradient(
+    135deg,
+    #07111b,
+    #020304
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 18px;
+  border-bottom: 2px solid #203545;
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-    font-size: 42px;
-    font-weight: 900;
-    letter-spacing: 4px;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
 }
 
 .logo-life {
-    color: white;
+  color: white;
 }
 
 .logo-six {
-    color: #f6a623;
+  color: #f5a623;
 }
 
 .tagline {
-    margin-top: 5px;
-    font-size: 16px;
-    color: #d6d6d6;
+  margin-top: 3px;
+  color: #bbb;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
-.six-words {
-    margin-top: 12px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #58c9f5;
+.header-message {
+  color: #55c7ef;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: right;
+  letter-spacing: 1px;
 }
 
-/* SIX SCREEN GRID */
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 10px;
+/* =========================
+   SIX SCREEN WALL
+   ========================= */
+
+.wall {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 8px;
 }
 
 .screen {
-    background: #0c1116;
-    border: 1px solid #263746;
-    border-radius: 8px;
-    overflow: hidden;
+  background: #000;
+  border: 1px solid #263746;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .screen-title {
-    padding: 9px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    background: #101820;
+  height: 36px;
+  background: #101820;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.video {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: black;
+.status {
+  color: #58c9f5;
+  font-size: 9px;
 }
 
-.video iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    left: 0;
-    top: 0;
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
 }
 
-/* PLACEHOLDERS */
-
-.coming-soon {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #080b0e;
-    color: #7e8b94;
-    font-size: 15px;
-    letter-spacing: 2px;
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-/* FOOTER */
+
+/* =========================
+   PLACEHOLDER
+   ========================= */
+
+.placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at center,
+      #142331,
+      #05090d 70%
+    );
+  color: #8093a0;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 15px;
+}
+
+
+/* =========================
+   AUDIO CONTROLS
+   ========================= */
+
+.audio-controls {
+  background: #111;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sound-button {
+  background: #242424;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sound-button:hover {
+  background: #333;
+}
+
+.volume-slider {
+  flex: 1;
+  min-width: 40px;
+}
+
+.volume-number {
+  width: 35px;
+  font-size: 9px;
+  text-align: right;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
 
 footer {
-    text-align: center;
-    padding: 22px 15px 30px;
-    color: #aab2b8;
-    font-size: 12px;
-    line-height: 1.6;
+  text-align: center;
+  padding: 18px 10px 22px;
+  background: #080b0e;
+  border-top: 1px solid #23303a;
 }
 
-.footer-title {
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 8px;
+.footer-line {
+  color: #708492;
+  font-size: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-/* TABLETS */
-
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.disclaimer-link {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-/* PHONES */
-
-@media (max-width: 520px) {
-    header {
-        padding: 15px 8px;
-    }
-
-    .logo {
-        font-size: 30px;
-    }
-
-    .tagline {
-        font-size: 13px;
-    }
-
-    .six-words {
-        font-size: 9px;
-        letter-spacing: 1px;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
-        padding: 5px;
-    }
-
-    .screen-title {
-        font-size: 10px;
-        padding: 7px 3px;
-    }
+.disclaimer-link:hover {
+  color: white;
 }
+
+
+/* =========================
+   DISCLAIMER POPUP
+   ========================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #111;
+  color: #eee;
+  width: 100%;
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  position: relative;
+  line-height: 1.6;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  padding-right: 35px;
+}
+
+.modal-content h3 {
+  margin-top: 25px;
+}
+
+.modal-content p {
+  color: #ccc;
+}
+
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 950px) {
+
+  .wall {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+  header {
+    min-height: 58px;
+    padding: 8px 9px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .tagline {
+    font-size: 8px;
+  }
+
+  .header-message {
+    font-size: 7px;
+  }
+
+  .wall {
+    grid-template-columns:
+      repeat(2, 1fr);
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .screen-title {
+    height: 29px;
+    font-size: 8px;
+    padding: 0 6px;
+  }
+
+  .status {
+    font-size: 6px;
+  }
+
+  .audio-controls {
+    padding: 5px;
+    gap: 4px;
+  }
+
+  .sound-button {
+    font-size: 7px;
+    padding: 5px 6px;
+  }
+
+  .volume-number {
+    font-size: 7px;
+    width: 25px;
+  }
+
+  .placeholder {
+    font-size: 8px;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    margin: 15px auto;
+    padding: 20px 16px;
+    font-size: 14px;
+  }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+
 <header>
 
+  <div class="logo-area">
+
     <div class="logo">
-        <span class="logo-life">LIFE IN </span>
-        <span class="logo-six">6</span>
+      <span class="logo-life">
+        LIFE IN
+      </span>
+
+      <span class="logo-six">
+        6
+      </span>
     </div>
 
     <div class="tagline">
-        Stories worth watching. Things worth trying.
+      Stories worth watching.
+      Things worth trying.
     </div>
 
-    <div class="six-words">
-        WATCH • LISTEN • BREATHE • MOVE • LEARN • CONNECT
-    </div>
+  </div>
+
+  <div class="header-message">
+    WATCH • LISTEN • BREATHE<br>
+    MOVE • LEARN • CONNECT
+  </div>
 
 </header>
 
 
-<div class="grid">
+
+<main class="wall">
 
 
-<!-- SCREEN 1 -->
-<div class="screen">
+<!-- ==================================
+     SCREEN 1 — STORIES
+     ANTHONY HOPKINS
+     ================================== -->
 
-    <div class="screen-title">
-        STORIES
-    </div>
+<section class="screen">
 
-    <div class="video">
-        <iframe
-        src="https://www.youtube.com/embed/1mbe4F3YBqw"
-        title="Anthony Hopkins"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-        </iframe>
-    </div>
+  <div class="screen-title">
+    <span>STORIES</span>
+    <span class="status">FEATURED</span>
+  </div>
 
-</div>
+  <div class="video-container">
 
+    <iframe
+      id="player1"
+      src="https://www.youtube.com/embed/1mbe4F3YBqw?mute=1&controls=1&playsinline=1&rel=0&enablejsapi=1"
+      title="Anthony Hopkins"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      allowfullscreen>
+    </iframe>
 
-<!-- SCREEN 2 -->
-<div class="screen">
+  </div>
 
-    <div class="screen-title">
-        REAL PEOPLE
-    </div>
+  <div class="audio-controls">
 
-    <div class="coming-soon">
-        NEXT PICK COMING
-    </div>
+    <button
+      class="sound-button"
+      onclick="toggleSound('player1', this)">
+      SOUND ON
+    </button>
 
-</div>
+    <input
+      class="volume-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      oninput="changeVolume(
+        'player1',
+        this.value,
+        'vol1'
+      )">
 
+    <span
+      id="vol1"
+      class="volume-number">
+      50%
+    </span>
 
-<!-- SCREEN 3 -->
-<div class="screen">
+  </div>
 
-    <div class="screen-title">
-        AUSTRALIA
-    </div>
-
-    <div class="coming-soon">
-        NEXT PICK COMING
-    </div>
-
-</div>
-
-
-<!-- SCREEN 4 -->
-<div class="screen">
-
-    <div class="screen-title">
-        MUSIC + RESET
-    </div>
-
-    <div class="video">
-        <iframe
-        src="https://www.youtube.com/embed/BQDDbesNPJ4"
-        title="Tim Minchin - Not Perfect"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-        </iframe>
-    </div>
-
-</div>
+</section>
 
 
-<!-- SCREEN 5 -->
-<div class="screen">
 
-    <div class="screen-title">
-        MIND + BODY
-    </div>
+<!-- ==================================
+     SCREEN 2 — REAL PEOPLE
+     ================================== -->
 
-    <div class="video">
-        <iframe
-        src="https://www.youtube.com/embed/bHo6do6fDPE"
-        title="Mind and Body"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-        </iframe>
-    </div>
+<section class="screen">
 
-</div>
+  <div class="screen-title">
+    <span>REAL PEOPLE</span>
+    <span class="status">
+      NEXT PICK
+    </span>
+  </div>
 
+  <div class="placeholder">
+    NEW STORY COMING
+  </div>
 
-<!-- SCREEN 6 -->
-<div class="screen">
-
-    <div class="screen-title">
-        LIVE / TRY THIS
-    </div>
-
-    <div class="coming-soon">
-        NEXT PICK COMING
-    </div>
-
-</div>
+</section>
 
 
-</div>
+
+<!-- ==================================
+     SCREEN 3 — AUSTRALIA
+     ================================== -->
+
+<section class="screen">
+
+  <div class="screen-title">
+    <span>AUSTRALIA</span>
+    <span class="status">
+      NEXT PICK
+    </span>
+  </div>
+
+  <div class="placeholder">
+    AUSTRALIAN STORY COMING
+  </div>
+
+</section>
+
+
+
+<!-- ==================================
+     SCREEN 4 — MUSIC + RESET
+     TIM MINCHIN
+     ================================== -->
+
+<section class="screen">
+
+  <div class="screen-title">
+    <span>MUSIC + RESET</span>
+    <span class="status">
+      FEATURED
+    </span>
+  </div>
+
+  <div class="video-container">
+
+    <iframe
+      id="player4"
+      src="https://www.youtube.com/embed/BQDDbesNPJ4?mute=1&controls=1&playsinline=1&rel=0&enablejsapi=1"
+      title="Tim Minchin - Not Perfect"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+  <div class="audio-controls">
+
+    <button
+      class="sound-button"
+      onclick="toggleSound('player4', this)">
+      SOUND ON
+    </button>
+
+    <input
+      class="volume-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      oninput="changeVolume(
+        'player4',
+        this.value,
+        'vol4'
+      )">
+
+    <span
+      id="vol4"
+      class="volume-number">
+      50%
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================
+     SCREEN 5 — MIND + BODY
+     ================================== -->
+
+<section class="screen">
+
+  <div class="screen-title">
+    <span>MIND + BODY</span>
+    <span class="status">
+      TRY THIS
+    </span>
+  </div>
+
+  <div class="video-container">
+
+    <iframe
+      id="player5"
+      src="https://www.youtube.com/embed/bHo6do6fDPE?mute=1&controls=1&playsinline=1&rel=0&enablejsapi=1"
+      title="Mind and Body"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+  <div class="audio-controls">
+
+    <button
+      class="sound-button"
+      onclick="toggleSound('player5', this)">
+      SOUND ON
+    </button>
+
+    <input
+      class="volume-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      oninput="changeVolume(
+        'player5',
+        this.value,
+        'vol5'
+      )">
+
+    <span
+      id="vol5"
+      class="volume-number">
+      50%
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================
+     SCREEN 6 — LIVE / TRY THIS
+     ================================== -->
+
+<section class="screen">
+
+  <div class="screen-title">
+    <span>LIVE / TRY THIS</span>
+    <span class="status">
+      NEXT PICK
+    </span>
+  </div>
+
+  <div class="placeholder">
+    BREATHWORK • MOVEMENT • LIVE
+  </div>
+
+</section>
+
+
+</main>
+
 
 
 <footer>
 
-    <div class="footer-title">
-        LIFE IN 6
-    </div>
+  <div class="footer-line">
+    SIX THINGS • ONE LIFE
+  </div>
 
-    Six carefully selected things to watch, listen to or try.
-    Selections change regularly.
-
-    <br><br>
-
-    LIFE IN 6 does not own or produce third-party videos displayed on this
-    site unless specifically stated. Content remains the property of its
-    respective creators and is presented through available third-party
-    embedding services.
-
-    <br><br>
-
-    Content on LIFE IN 6 is provided for general interest and inspiration
-    and is not a substitute for professional medical, psychological or
-    mental health advice, diagnosis or treatment.
+  <button
+    class="disclaimer-link"
+    onclick="openDisclaimer()">
+    Terms, Disclaimer & Content Owners
+  </button>
 
 </footer>
 
+
+
+<!-- =========================
+     DISCLAIMER POPUP
+     ========================= -->
+
+<div
+  id="disclaimerModal"
+  class="modal"
+  onclick="closeFromBackground(event)">
+
+  <div class="modal-content">
+
+    <button
+      class="close-button"
+      onclick="closeDisclaimer()">
+      &times;
+    </button>
+
+    <h2>
+      Terms, Disclaimer
+      & Content Owners
+    </h2>
+
+    <p>
+      LIFE IN 6 is an independent
+      content-curation platform featuring
+      selected stories, conversations,
+      music, exercises and other material
+      that we believe may be interesting,
+      useful or worth experiencing.
+    </p>
+
+    <p>
+      LIFE IN 6 does not own or produce
+      third-party videos, live streams,
+      websites or other external content
+      displayed or linked through this
+      site unless expressly stated
+      otherwise.
+    </p>
+
+    <p>
+      All third-party content remains
+      the property of its respective
+      creators, publishers and copyright
+      owners.
+    </p>
+
+    <p>
+      Content featured on LIFE IN 6 is
+      independently selected and curated
+      according to our interests,
+      preferences and the themes of the
+      platform.
+    </p>
+
+    <p>
+      Inclusion of third-party content
+      does not imply sponsorship,
+      endorsement, partnership or
+      affiliation between LIFE IN 6 and
+      any creator, organisation,
+      publisher or platform.
+    </p>
+
+    <p>
+      Third-party content may be changed,
+      restricted, interrupted, removed
+      or made unavailable by its owner
+      or hosting platform at any time.
+    </p>
+
+    <p>
+      We encourage viewers to support
+      original creators through their
+      official channels.
+    </p>
+
+    <h3>
+      Health & Wellbeing
+    </h3>
+
+    <p>
+      LIFE IN 6 is not a medical,
+      psychological, counselling or
+      healthcare service.
+    </p>
+
+    <p>
+      Videos, breathwork, meditation,
+      exercise and other wellbeing
+      content featured on the platform
+      are provided for general interest
+      and educational or inspirational
+      purposes only.
+    </p>
+
+    <p>
+      Content on LIFE IN 6 is not a
+      substitute for professional
+      medical, psychological or mental
+      health advice, diagnosis or
+      treatment.
+    </p>
+
+    <p>
+      Viewers should use their own
+      judgement and seek appropriately
+      qualified professional assistance
+      where necessary.
+    </p>
+
+    <h3>
+      Content Owners
+    </h3>
+
+    <p>
+      LIFE IN 6 respects the rights of
+      content creators and copyright
+      owners.
+    </p>
+
+    <p>
+      If you are the owner or authorised
+      representative of content featured
+      through LIFE IN 6 and would prefer
+      that it not be included, please
+      contact us and legitimate removal
+      requests will be reviewed promptly.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   YOUTUBE AUDIO CONTROLS
+   ========================= */
+
+function sendCommand(
+  playerId,
+  command,
+  args = []
+) {
+
+  const player =
+    document.getElementById(
+      playerId
+    );
+
+  if (!player) {
+    return;
+  }
+
+  player.contentWindow.postMessage(
+    JSON.stringify({
+      event: "command",
+      func: command,
+      args: args
+    }),
+    "*"
+  );
+
+}
+
+
+function toggleSound(
+  playerId,
+  button
+) {
+
+  const soundIsOn =
+    button.getAttribute(
+      "data-sound"
+    ) === "on";
+
+
+  if (soundIsOn) {
+
+    sendCommand(
+      playerId,
+      "mute"
+    );
+
+    button.innerText =
+      "SOUND ON";
+
+    button.setAttribute(
+      "data-sound",
+      "off"
+    );
+
+  }
+
+  else {
+
+    sendCommand(
+      playerId,
+      "unMute"
+    );
+
+    sendCommand(
+      playerId,
+      "setVolume",
+      [50]
+    );
+
+    button.innerText =
+      "MUTE";
+
+    button.setAttribute(
+      "data-sound",
+      "on"
+    );
+
+  }
+
+}
+
+
+function changeVolume(
+  playerId,
+  volume,
+  displayId
+) {
+
+  document.getElementById(
+    displayId
+  ).innerText =
+    volume + "%";
+
+  sendCommand(
+    playerId,
+    "setVolume",
+    [Number(volume)]
+  );
+
+  if (
+    Number(volume) > 0
+  ) {
+
+    sendCommand(
+      playerId,
+      "unMute"
+    );
+
+  }
+
+}
+
+
+/* =========================
+   DISCLAIMER
+   ========================= */
+
+function openDisclaimer() {
+
+  document.getElementById(
+    "disclaimerModal"
+  ).style.display =
+    "block";
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+function closeDisclaimer() {
+
+  document.getElementById(
+    "disclaimerModal"
+  ).style.display =
+    "none";
+
+  document.body.style.overflow =
+    "auto";
+
+}
+
+
+function closeFromBackground(
+  event
+) {
+
+  if (
+    event.target.id ===
+    "disclaimerModal"
+  ) {
+
+    closeDisclaimer();
+
+  }
+
+}
+
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeDisclaimer();
+
+    }
+
+  }
+);
+
+
+</script>
+
+
 </body>
-</html>
+
+    </html>
