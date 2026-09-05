@@ -139,32 +139,6 @@ header {
 
 
 /* =========================
-   SCREEN 6 PLACEHOLDER
-   ========================= */
-
-.placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    radial-gradient(
-      circle at center,
-      #142331,
-      #05090d 70%
-    );
-
-  color: #8093a0;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-align: center;
-  padding: 15px;
-}
-
-
-/* =========================
    VIDEO CONTROLS
    ========================= */
 
@@ -370,10 +344,6 @@ footer {
     width: 25px;
   }
 
-  .placeholder {
-    font-size: 8px;
-  }
-
   .modal {
     padding: 10px;
   }
@@ -393,10 +363,6 @@ footer {
 
 <body>
 
-
-<!-- =========================
-     HEADER
-     ========================= -->
 
 <header>
 
@@ -431,34 +397,21 @@ footer {
 
 
 
-<!-- =========================
-     SIX SCREEN WALL
-     ========================= -->
-
 <main class="wall">
 
 
-<!-- =========================
-     SCREEN 1 — STORIES
-     ========================= -->
+<!-- SCREEN 1 — STORIES -->
 
 <section class="screen">
 
   <div class="screen-title">
-
     <span>STORIES</span>
-
-    <span class="status">
-      FEATURED
-    </span>
-
+    <span class="status">FEATURED</span>
   </div>
-
 
   <div class="video-container">
     <div id="player1"></div>
   </div>
-
 
   <div class="audio-controls">
 
@@ -489,10 +442,7 @@ footer {
     <button
       id="sound1"
       class="control-button"
-      onclick="toggleSound(
-        'player1',
-        'sound1'
-      )">
+      onclick="toggleSound('player1','sound1')">
       SOUND ON
     </button>
 
@@ -509,9 +459,7 @@ footer {
         'sound1'
       )">
 
-    <span
-      id="vol1"
-      class="volume-number">
+    <span id="vol1" class="volume-number">
       50%
     </span>
 
@@ -521,27 +469,18 @@ footer {
 
 
 
-<!-- =========================
-     SCREEN 2 — REAL PEOPLE
-     ========================= -->
+<!-- SCREEN 2 — REAL PEOPLE -->
 
 <section class="screen">
 
   <div class="screen-title">
-
     <span>REAL PEOPLE</span>
-
-    <span class="status">
-      FEATURED
-    </span>
-
+    <span class="status">FEATURED</span>
   </div>
-
 
   <div class="video-container">
     <div id="player2"></div>
   </div>
-
 
   <div class="audio-controls">
 
@@ -572,10 +511,7 @@ footer {
     <button
       id="sound2"
       class="control-button"
-      onclick="toggleSound(
-        'player2',
-        'sound2'
-      )">
+      onclick="toggleSound('player2','sound2')">
       SOUND ON
     </button>
 
@@ -592,9 +528,7 @@ footer {
         'sound2'
       )">
 
-    <span
-      id="vol2"
-      class="volume-number">
+    <span id="vol2" class="volume-number">
       50%
     </span>
 
@@ -604,27 +538,18 @@ footer {
 
 
 
-<!-- =========================
-     SCREEN 3 — AUSTRALIA
-     ========================= -->
+<!-- SCREEN 3 — AUSTRALIA -->
 
 <section class="screen">
 
   <div class="screen-title">
-
     <span>AUSTRALIA</span>
-
-    <span class="status">
-      FEATURED
-    </span>
-
+    <span class="status">FEATURED</span>
   </div>
-
 
   <div class="video-container">
     <div id="player3"></div>
   </div>
-
 
   <div class="audio-controls">
 
@@ -655,10 +580,7 @@ footer {
     <button
       id="sound3"
       class="control-button"
-      onclick="toggleSound(
-        'player3',
-        'sound3'
-      )">
+      onclick="toggleSound('player3','sound3')">
       SOUND ON
     </button>
 
@@ -675,9 +597,7 @@ footer {
         'sound3'
       )">
 
-    <span
-      id="vol3"
-      class="volume-number">
+    <span id="vol3" class="volume-number">
       50%
     </span>
 
@@ -687,27 +607,18 @@ footer {
 
 
 
-<!-- =========================
-     SCREEN 4 — MUSIC + RESET
-     ========================= -->
+<!-- SCREEN 4 — MUSIC + RESET -->
 
 <section class="screen">
 
   <div class="screen-title">
-
     <span>MUSIC + RESET</span>
-
-    <span class="status">
-      FEATURED
-    </span>
-
+    <span class="status">FEATURED</span>
   </div>
-
 
   <div class="video-container">
     <div id="player4"></div>
   </div>
-
 
   <div class="audio-controls">
 
@@ -738,10 +649,7 @@ footer {
     <button
       id="sound4"
       class="control-button"
-      onclick="toggleSound(
-        'player4',
-        'sound4'
-      )">
+      onclick="toggleSound('player4','sound4')">
       SOUND ON
     </button>
 
@@ -758,9 +666,7 @@ footer {
         'sound4'
       )">
 
-    <span
-      id="vol4"
-      class="volume-number">
+    <span id="vol4" class="volume-number">
       50%
     </span>
 
@@ -770,27 +676,18 @@ footer {
 
 
 
-<!-- =========================
-     SCREEN 5 — MIND + BODY
-     ========================= -->
+<!-- SCREEN 5 — MIND + BODY -->
 
 <section class="screen">
 
   <div class="screen-title">
-
     <span>MIND + BODY</span>
-
-    <span class="status">
-      TRY THIS
-    </span>
-
+    <span class="status">TRY THIS</span>
   </div>
-
 
   <div class="video-container">
     <div id="player5"></div>
   </div>
-
 
   <div class="audio-controls">
 
@@ -821,10 +718,7 @@ footer {
     <button
       id="sound5"
       class="control-button"
-      onclick="toggleSound(
-        'player5',
-        'sound5'
-      )">
+      onclick="toggleSound('player5','sound5')">
       SOUND ON
     </button>
 
@@ -841,9 +735,7 @@ footer {
         'sound5'
       )">
 
-    <span
-      id="vol5"
-      class="volume-number">
+    <span id="vol5" class="volume-number">
       50%
     </span>
 
@@ -853,42 +745,18 @@ footer {
 
 
 
-<!-- =========================
-     SCREEN 6 — LIVE / TRY THIS
-     READY FOR FUTURE VIDEO
-     ========================= -->
+<!-- SCREEN 6 — WORLDWIDE -->
 
 <section class="screen">
 
   <div class="screen-title">
-
-    <span>LIVE / TRY THIS</span>
-
-    <span class="status">
-      NEXT PICK
-    </span>
-
+    <span>WORLDWIDE</span>
+    <span class="status">FEATURED</span>
   </div>
 
-
-  <div
-    id="screen6Placeholder"
-    class="placeholder">
-
-    BREATHWORK • MOVEMENT • LIVE
-
-  </div>
-
-
-  <div
-    id="screen6Video"
-    class="video-container"
-    style="display:none;">
-
+  <div class="video-container">
     <div id="player6"></div>
-
   </div>
-
 
   <div class="audio-controls">
 
@@ -919,10 +787,7 @@ footer {
     <button
       id="sound6"
       class="control-button"
-      onclick="toggleSound(
-        'player6',
-        'sound6'
-      )">
+      onclick="toggleSound('player6','sound6')">
       SOUND ON
     </button>
 
@@ -939,9 +804,7 @@ footer {
         'sound6'
       )">
 
-    <span
-      id="vol6"
-      class="volume-number">
+    <span id="vol6" class="volume-number">
       50%
     </span>
 
@@ -953,10 +816,6 @@ footer {
 </main>
 
 
-
-<!-- =========================
-     FOOTER
-     ========================= -->
 
 <footer>
 
@@ -975,10 +834,6 @@ footer {
 </footer>
 
 
-
-<!-- =========================
-     DISCLAIMER
-     ========================= -->
 
 <div
   id="disclaimerModal"
@@ -1128,38 +983,11 @@ footer {
 
 
 
-<!-- =========================
-     YOUTUBE PLAYER API
-     ========================= -->
-
 <script src="https://www.youtube.com/iframe_api"></script>
 
 
 <script>
 
-
-/* =========================
-   SCREEN 6 VIDEO
-   ========================= */
-
-/*
-When you give me the sixth YouTube video,
-we only need to put its VIDEO ID between
-the quotation marks below.
-
-Example:
-
-const SCREEN6_VIDEO_ID = "abc123xyz";
-
-For now it stays blank.
-*/
-
-const SCREEN6_VIDEO_ID = "";
-
-
-/* =========================
-   PLAYER STORAGE
-   ========================= */
 
 const players = {};
 
@@ -1175,77 +1003,40 @@ const playerVolumes = {
 };
 
 
-/* =========================
-   CREATE YOUTUBE PLAYERS
-   ========================= */
-
 function onYouTubeIframeAPIReady() {
-
 
   createPlayer(
     "player1",
     "1mbe4F3YBqw"
   );
 
-
   createPlayer(
     "player2",
     "S1QDFp6DMk0"
   );
-
 
   createPlayer(
     "player3",
     "ja8kM5ldRHc"
   );
 
-
   createPlayer(
     "player4",
     "BQDDbesNPJ4"
   );
-
 
   createPlayer(
     "player5",
     "bHo6do6fDPE"
   );
 
-
-  /*
-  SCREEN 6
-
-  This automatically activates
-  when a video ID is added above.
-  */
-
-  if (SCREEN6_VIDEO_ID !== "") {
-
-    document.getElementById(
-      "screen6Placeholder"
-    ).style.display =
-      "none";
-
-
-    document.getElementById(
-      "screen6Video"
-    ).style.display =
-      "block";
-
-
-    createPlayer(
-      "player6",
-      SCREEN6_VIDEO_ID
-    );
-
-  }
+  createPlayer(
+    "player6",
+    "Oul9nDB06yQ"
+  );
 
 }
 
-
-/* =========================
-   PLAYER CREATOR
-   ========================= */
 
 function createPlayer(
   playerId,
@@ -1277,7 +1068,6 @@ function createPlayer(
             function(event) {
 
               event.target.setVolume(50);
-
               event.target.mute();
 
             }
@@ -1290,20 +1080,14 @@ function createPlayer(
 }
 
 
-/* =========================
-   PLAY
-   ========================= */
-
 function playVideo(playerId) {
 
   const player =
     players[playerId];
 
-
   if (!player) {
     return;
   }
-
 
   try {
 
@@ -1314,7 +1098,6 @@ function playVideo(playerId) {
     );
 
     player.playVideo();
-
 
     updateSoundButton(
       playerId,
@@ -1334,20 +1117,14 @@ function playVideo(playerId) {
 }
 
 
-/* =========================
-   PAUSE
-   ========================= */
-
 function pauseVideo(playerId) {
 
   const player =
     players[playerId];
 
-
   if (!player) {
     return;
   }
-
 
   try {
 
@@ -1366,26 +1143,19 @@ function pauseVideo(playerId) {
 }
 
 
-/* =========================
-   REWIND 10 SECONDS
-   ========================= */
-
 function rewindVideo(playerId) {
 
   const player =
     players[playerId];
 
-
   if (!player) {
     return;
   }
-
 
   try {
 
     const currentTime =
       player.getCurrentTime();
-
 
     player.seekTo(
       Math.max(
@@ -1408,34 +1178,25 @@ function rewindVideo(playerId) {
 }
 
 
-/* =========================
-   FORWARD 10 SECONDS
-   ========================= */
-
 function forwardVideo(playerId) {
 
   const player =
     players[playerId];
 
-
   if (!player) {
     return;
   }
-
 
   try {
 
     const currentTime =
       player.getCurrentTime();
 
-
     const duration =
       player.getDuration();
 
-
     let newTime =
       currentTime + 10;
-
 
     if (
       duration &&
@@ -1446,7 +1207,6 @@ function forwardVideo(playerId) {
         duration;
 
     }
-
 
     player.seekTo(
       newTime,
@@ -1466,10 +1226,6 @@ function forwardVideo(playerId) {
 }
 
 
-/* =========================
-   SOUND ON / MUTE
-   ========================= */
-
 function toggleSound(
   playerId,
   buttonId
@@ -1483,14 +1239,11 @@ function toggleSound(
       buttonId
     );
 
-
   if (!player || !button) {
     return;
   }
 
-
   try {
-
 
     if (player.isMuted()) {
 
@@ -1504,7 +1257,6 @@ function toggleSound(
         "MUTE";
 
     }
-
 
     else {
 
@@ -1528,10 +1280,6 @@ function toggleSound(
 }
 
 
-/* =========================
-   VOLUME
-   ========================= */
-
 function changeVolume(
   playerId,
   volume,
@@ -1542,25 +1290,20 @@ function changeVolume(
   const numericVolume =
     Number(volume);
 
-
   playerVolumes[playerId] =
     numericVolume;
-
 
   document.getElementById(
     displayId
   ).innerText =
     numericVolume + "%";
 
-
   const player =
     players[playerId];
-
 
   if (!player) {
     return;
   }
-
 
   try {
 
@@ -1568,12 +1311,10 @@ function changeVolume(
       numericVolume
     );
 
-
     const button =
       document.getElementById(
         buttonId
       );
-
 
     if (numericVolume === 0) {
 
@@ -1587,7 +1328,6 @@ function changeVolume(
       }
 
     }
-
 
     else {
 
@@ -1615,10 +1355,6 @@ function changeVolume(
 }
 
 
-/* =========================
-   SOUND BUTTON HELPER
-   ========================= */
-
 function updateSoundButton(
   playerId,
   text
@@ -1635,12 +1371,10 @@ function updateSoundButton(
 
   };
 
-
   const button =
     document.getElementById(
       soundButtons[playerId]
     );
-
 
   if (button) {
 
@@ -1651,10 +1385,6 @@ function updateSoundButton(
 
 }
 
-
-/* =========================
-   DISCLAIMER
-   ========================= */
 
 function openDisclaimer() {
 
