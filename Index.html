@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LIFE IN 6</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #05090d;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #07111b, #020304);
+    text-align: center;
+    padding: 22px 15px 18px;
+    border-bottom: 1px solid #1e3647;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.logo-life {
+    color: white;
+}
+
+.logo-six {
+    color: #f6a623;
+}
+
+.tagline {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #d6d6d6;
+}
+
+.six-words {
+    margin-top: 12px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #58c9f5;
+}
+
+/* SIX SCREEN GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.screen {
+    background: #0c1116;
+    border: 1px solid #263746;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.screen-title {
+    padding: 9px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    background: #101820;
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: black;
+}
+
+.video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    left: 0;
+    top: 0;
+}
+
+/* PLACEHOLDERS */
+
+.coming-soon {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #080b0e;
+    color: #7e8b94;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 22px 15px 30px;
+    color: #aab2b8;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer-title {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* PHONES */
+
+@media (max-width: 520px) {
+    header {
+        padding: 15px 8px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .tagline {
+        font-size: 13px;
+    }
+
+    .six-words {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .screen-title {
+        font-size: 10px;
+        padding: 7px 3px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span class="logo-life">LIFE IN </span>
+        <span class="logo-six">6</span>
+    </div>
+
+    <div class="tagline">
+        Stories worth watching. Things worth trying.
+    </div>
+
+    <div class="six-words">
+        WATCH • LISTEN • BREATHE • MOVE • LEARN • CONNECT
+    </div>
+
+</header>
+
+
+<div class="grid">
+
+
+<!-- SCREEN 1 -->
+<div class="screen">
+
+    <div class="screen-title">
+        STORIES
+    </div>
+
+    <div class="video">
+        <iframe
+        src="https://www.youtube.com/embed/1mbe4F3YBqw"
+        title="Anthony Hopkins"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+</div>
+
+
+<!-- SCREEN 2 -->
+<div class="screen">
+
+    <div class="screen-title">
+        REAL PEOPLE
+    </div>
+
+    <div class="coming-soon">
+        NEXT PICK COMING
+    </div>
+
+</div>
+
+
+<!-- SCREEN 3 -->
+<div class="screen">
+
+    <div class="screen-title">
+        AUSTRALIA
+    </div>
+
+    <div class="coming-soon">
+        NEXT PICK COMING
+    </div>
+
+</div>
+
+
+<!-- SCREEN 4 -->
+<div class="screen">
+
+    <div class="screen-title">
+        MUSIC + RESET
+    </div>
+
+    <div class="video">
+        <iframe
+        src="https://www.youtube.com/embed/BQDDbesNPJ4"
+        title="Tim Minchin - Not Perfect"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+</div>
+
+
+<!-- SCREEN 5 -->
+<div class="screen">
+
+    <div class="screen-title">
+        MIND + BODY
+    </div>
+
+    <div class="video">
+        <iframe
+        src="https://www.youtube.com/embed/bHo6do6fDPE"
+        title="Mind and Body"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+</div>
+
+
+<!-- SCREEN 6 -->
+<div class="screen">
+
+    <div class="screen-title">
+        LIVE / TRY THIS
+    </div>
+
+    <div class="coming-soon">
+        NEXT PICK COMING
+    </div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+    <div class="footer-title">
+        LIFE IN 6
+    </div>
+
+    Six carefully selected things to watch, listen to or try.
+    Selections change regularly.
+
+    <br><br>
+
+    LIFE IN 6 does not own or produce third-party videos displayed on this
+    site unless specifically stated. Content remains the property of its
+    respective creators and is presented through available third-party
+    embedding services.
+
+    <br><br>
+
+    Content on LIFE IN 6 is provided for general interest and inspiration
+    and is not a substitute for professional medical, psychological or
+    mental health advice, diagnosis or treatment.
+
+</footer>
+
+</body>
+</html>
