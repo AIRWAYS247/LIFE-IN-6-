@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 
 <meta
@@ -118,6 +117,11 @@ header {
   font-size: 9px;
 }
 
+
+/* =========================
+   VIDEO
+   ========================= */
+
 .video-container {
   position: relative;
   width: 100%;
@@ -135,7 +139,7 @@ header {
 
 
 /* =========================
-   PLACEHOLDER
+   PLACEHOLDERS
    ========================= */
 
 .placeholder {
@@ -144,12 +148,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+
   background:
     radial-gradient(
       circle at center,
       #142331,
       #05090d 70%
     );
+
   color: #8093a0;
   font-size: 12px;
   letter-spacing: 2px;
@@ -159,39 +165,40 @@ header {
 
 
 /* =========================
-   AUDIO CONTROLS
+   VIDEO CONTROLS
    ========================= */
 
 .audio-controls {
   background: #111;
-  padding: 8px;
+  padding: 7px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-.sound-button {
+.control-button {
   background: #242424;
   color: white;
   border: 1px solid #555;
   border-radius: 5px;
-  padding: 7px 10px;
-  font-size: 10px;
+  padding: 7px 9px;
+  font-size: 9px;
   font-weight: bold;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.sound-button:hover {
+.control-button:hover {
   background: #333;
 }
 
 .volume-slider {
   flex: 1;
-  min-width: 40px;
+  min-width: 35px;
 }
 
 .volume-number {
-  width: 35px;
+  width: 32px;
   font-size: 9px;
   text-align: right;
 }
@@ -222,10 +229,6 @@ footer {
   font-size: 12px;
   text-decoration: underline;
   cursor: pointer;
-}
-
-.disclaimer-link:hover {
-  color: white;
 }
 
 
@@ -340,12 +343,12 @@ footer {
 
   .audio-controls {
     padding: 5px;
-    gap: 4px;
+    gap: 3px;
   }
 
-  .sound-button {
-    font-size: 7px;
-    padding: 5px 6px;
+  .control-button {
+    font-size: 6px;
+    padding: 5px;
   }
 
   .volume-number {
@@ -373,14 +376,20 @@ footer {
 
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+     ========================= -->
 
 <header>
 
   <div class="logo-area">
 
     <div class="logo">
+
       <span class="logo-life">
         LIFE IN
       </span>
@@ -388,6 +397,7 @@ footer {
       <span class="logo-six">
         6
       </span>
+
     </div>
 
     <div class="tagline">
@@ -396,6 +406,7 @@ footer {
     </div>
 
   </div>
+
 
   <div class="header-message">
     WATCH • LISTEN • BREATHE<br>
@@ -406,38 +417,58 @@ footer {
 
 
 
+<!-- =========================
+     SIX SCREEN WALL
+     ========================= -->
+
 <main class="wall">
 
 
-<!-- ==================================
+<!-- =========================
      SCREEN 1 — STORIES
-     ANTHONY HOPKINS
-     ================================== -->
+     ========================= -->
 
 <section class="screen">
 
   <div class="screen-title">
+
     <span>STORIES</span>
-    <span class="status">FEATURED</span>
+
+    <span class="status">
+      FEATURED
+    </span>
+
   </div>
+
 
   <div class="video-container">
 
-    <iframe
-      id="player1"
-      src="https://www.youtube.com/embed/1mbe4F3YBqw?mute=1&controls=1&playsinline=1&rel=0&enablejsapi=1"
-      title="Anthony Hopkins"
-      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen>
-    </iframe>
+    <div id="player1"></div>
 
   </div>
+
 
   <div class="audio-controls">
 
     <button
-      class="sound-button"
-      onclick="toggleSound('player1', this)">
+      class="control-button"
+      onclick="playVideo('player1')">
+      PLAY
+    </button>
+
+    <button
+      class="control-button"
+      onclick="pauseVideo('player1')">
+      PAUSE
+    </button>
+
+    <button
+      id="sound1"
+      class="control-button"
+      onclick="toggleSound(
+        'player1',
+        'sound1'
+      )">
       SOUND ON
     </button>
 
@@ -450,7 +481,8 @@ footer {
       oninput="changeVolume(
         'player1',
         this.value,
-        'vol1'
+        'vol1',
+        'sound1'
       )">
 
     <span
@@ -465,17 +497,20 @@ footer {
 
 
 
-<!-- ==================================
+<!-- =========================
      SCREEN 2 — REAL PEOPLE
-     ================================== -->
+     ========================= -->
 
 <section class="screen">
 
   <div class="screen-title">
+
     <span>REAL PEOPLE</span>
+
     <span class="status">
       NEXT PICK
     </span>
+
   </div>
 
   <div class="placeholder">
@@ -486,17 +521,20 @@ footer {
 
 
 
-<!-- ==================================
+<!-- =========================
      SCREEN 3 — AUSTRALIA
-     ================================== -->
+     ========================= -->
 
 <section class="screen">
 
   <div class="screen-title">
+
     <span>AUSTRALIA</span>
+
     <span class="status">
       NEXT PICK
     </span>
+
   </div>
 
   <div class="placeholder">
@@ -507,37 +545,51 @@ footer {
 
 
 
-<!-- ==================================
+<!-- =========================
      SCREEN 4 — MUSIC + RESET
-     TIM MINCHIN
-     ================================== -->
+     ========================= -->
 
 <section class="screen">
 
   <div class="screen-title">
+
     <span>MUSIC + RESET</span>
+
     <span class="status">
       FEATURED
     </span>
+
   </div>
+
 
   <div class="video-container">
 
-    <iframe
-      id="player4"
-      src="https://www.youtube.com/embed/BQDDbesNPJ4?mute=1&controls=1&playsinline=1&rel=0&enablejsapi=1"
-      title="Tim Minchin - Not Perfect"
-      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen>
-    </iframe>
+    <div id="player4"></div>
 
   </div>
+
 
   <div class="audio-controls">
 
     <button
-      class="sound-button"
-      onclick="toggleSound('player4', this)">
+      class="control-button"
+      onclick="playVideo('player4')">
+      PLAY
+    </button>
+
+    <button
+      class="control-button"
+      onclick="pauseVideo('player4')">
+      PAUSE
+    </button>
+
+    <button
+      id="sound4"
+      class="control-button"
+      onclick="toggleSound(
+        'player4',
+        'sound4'
+      )">
       SOUND ON
     </button>
 
@@ -550,7 +602,8 @@ footer {
       oninput="changeVolume(
         'player4',
         this.value,
-        'vol4'
+        'vol4',
+        'sound4'
       )">
 
     <span
@@ -565,36 +618,51 @@ footer {
 
 
 
-<!-- ==================================
+<!-- =========================
      SCREEN 5 — MIND + BODY
-     ================================== -->
+     ========================= -->
 
 <section class="screen">
 
   <div class="screen-title">
+
     <span>MIND + BODY</span>
+
     <span class="status">
       TRY THIS
     </span>
+
   </div>
+
 
   <div class="video-container">
 
-    <iframe
-      id="player5"
-      src="https://www.youtube.com/embed/bHo6do6fDPE?mute=1&controls=1&playsinline=1&rel=0&enablejsapi=1"
-      title="Mind and Body"
-      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen>
-    </iframe>
+    <div id="player5"></div>
 
   </div>
+
 
   <div class="audio-controls">
 
     <button
-      class="sound-button"
-      onclick="toggleSound('player5', this)">
+      class="control-button"
+      onclick="playVideo('player5')">
+      PLAY
+    </button>
+
+    <button
+      class="control-button"
+      onclick="pauseVideo('player5')">
+      PAUSE
+    </button>
+
+    <button
+      id="sound5"
+      class="control-button"
+      onclick="toggleSound(
+        'player5',
+        'sound5'
+      )">
       SOUND ON
     </button>
 
@@ -607,7 +675,8 @@ footer {
       oninput="changeVolume(
         'player5',
         this.value,
-        'vol5'
+        'vol5',
+        'sound5'
       )">
 
     <span
@@ -622,17 +691,20 @@ footer {
 
 
 
-<!-- ==================================
+<!-- =========================
      SCREEN 6 — LIVE / TRY THIS
-     ================================== -->
+     ========================= -->
 
 <section class="screen">
 
   <div class="screen-title">
+
     <span>LIVE / TRY THIS</span>
+
     <span class="status">
       NEXT PICK
     </span>
+
   </div>
 
   <div class="placeholder">
@@ -646,6 +718,10 @@ footer {
 
 
 
+<!-- =========================
+     FOOTER
+     ========================= -->
+
 <footer>
 
   <div class="footer-line">
@@ -655,7 +731,9 @@ footer {
   <button
     class="disclaimer-link"
     onclick="openDisclaimer()">
+
     Terms, Disclaimer & Content Owners
+
   </button>
 
 </footer>
@@ -663,7 +741,7 @@ footer {
 
 
 <!-- =========================
-     DISCLAIMER POPUP
+     DISCLAIMER
      ========================= -->
 
 <div
@@ -679,10 +757,12 @@ footer {
       &times;
     </button>
 
+
     <h2>
       Terms, Disclaimer
       & Content Owners
     </h2>
+
 
     <p>
       LIFE IN 6 is an independent
@@ -693,6 +773,7 @@ footer {
       useful or worth experiencing.
     </p>
 
+
     <p>
       LIFE IN 6 does not own or produce
       third-party videos, live streams,
@@ -702,12 +783,14 @@ footer {
       otherwise.
     </p>
 
+
     <p>
       All third-party content remains
       the property of its respective
       creators, publishers and copyright
       owners.
     </p>
+
 
     <p>
       Content featured on LIFE IN 6 is
@@ -716,6 +799,7 @@ footer {
       preferences and the themes of the
       platform.
     </p>
+
 
     <p>
       Inclusion of third-party content
@@ -726,6 +810,7 @@ footer {
       publisher or platform.
     </p>
 
+
     <p>
       Third-party content may be changed,
       restricted, interrupted, removed
@@ -733,21 +818,25 @@ footer {
       or hosting platform at any time.
     </p>
 
+
     <p>
       We encourage viewers to support
       original creators through their
       official channels.
     </p>
 
+
     <h3>
       Health & Wellbeing
     </h3>
+
 
     <p>
       LIFE IN 6 is not a medical,
       psychological, counselling or
       healthcare service.
     </p>
+
 
     <p>
       Videos, breathwork, meditation,
@@ -758,6 +847,7 @@ footer {
       purposes only.
     </p>
 
+
     <p>
       Content on LIFE IN 6 is not a
       substitute for professional
@@ -766,6 +856,7 @@ footer {
       treatment.
     </p>
 
+
     <p>
       Viewers should use their own
       judgement and seek appropriately
@@ -773,15 +864,18 @@ footer {
       where necessary.
     </p>
 
+
     <h3>
       Content Owners
     </h3>
+
 
     <p>
       LIFE IN 6 respects the rights of
       content creators and copyright
       owners.
     </p>
+
 
     <p>
       If you are the owner or authorised
@@ -798,118 +892,394 @@ footer {
 
 
 
+<!-- =========================
+     YOUTUBE PLAYER API
+     ========================= -->
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
 <script>
 
 
 /* =========================
-   YOUTUBE AUDIO CONTROLS
+   PLAYER STORAGE
    ========================= */
 
-function sendCommand(
-  playerId,
-  command,
-  args = []
-) {
+const players = {};
+
+const playerVolumes = {
+
+  player1: 50,
+  player4: 50,
+  player5: 50
+
+};
+
+
+/* =========================
+   CREATE YOUTUBE PLAYERS
+   ========================= */
+
+function onYouTubeIframeAPIReady() {
+
+
+  /* SCREEN 1 — ANTHONY HOPKINS */
+
+  players.player1 =
+    new YT.Player(
+      "player1",
+      {
+
+        videoId:
+          "1mbe4F3YBqw",
+
+        playerVars: {
+
+          controls: 1,
+          playsinline: 1,
+          rel: 0,
+          mute: 1,
+          autoplay: 0,
+          modestbranding: 1,
+          origin: window.location.origin
+
+        },
+
+        events: {
+
+          onReady:
+            function(event) {
+
+              event.target.setVolume(50);
+
+              event.target.mute();
+
+            }
+
+        }
+
+      }
+    );
+
+
+
+  /* SCREEN 4 — TIM MINCHIN */
+
+  players.player4 =
+    new YT.Player(
+      "player4",
+      {
+
+        videoId:
+          "BQDDbesNPJ4",
+
+        playerVars: {
+
+          controls: 1,
+          playsinline: 1,
+          rel: 0,
+          mute: 1,
+          autoplay: 0,
+          modestbranding: 1,
+          origin: window.location.origin
+
+        },
+
+        events: {
+
+          onReady:
+            function(event) {
+
+              event.target.setVolume(50);
+
+              event.target.mute();
+
+            }
+
+        }
+
+      }
+    );
+
+
+
+  /* SCREEN 5 — MIND + BODY */
+
+  players.player5 =
+    new YT.Player(
+      "player5",
+      {
+
+        videoId:
+          "bHo6do6fDPE",
+
+        playerVars: {
+
+          controls: 1,
+          playsinline: 1,
+          rel: 0,
+          mute: 1,
+          autoplay: 0,
+          modestbranding: 1,
+          origin: window.location.origin
+
+        },
+
+        events: {
+
+          onReady:
+            function(event) {
+
+              event.target.setVolume(50);
+
+              event.target.mute();
+
+            }
+
+        }
+
+      }
+    );
+
+}
+
+
+/* =========================
+   PLAY
+   ========================= */
+
+function playVideo(playerId) {
 
   const player =
-    document.getElementById(
-      playerId
-    );
+    players[playerId];
+
 
   if (!player) {
     return;
   }
 
-  player.contentWindow.postMessage(
-    JSON.stringify({
-      event: "command",
-      func: command,
-      args: args
-    }),
-    "*"
-  );
+
+  try {
+
+    player.unMute();
+
+    player.setVolume(
+      playerVolumes[playerId] || 50
+    );
+
+    player.playVideo();
+
+
+    const soundButtons = {
+
+      player1: "sound1",
+      player4: "sound4",
+      player5: "sound5"
+
+    };
+
+
+    const button =
+      document.getElementById(
+        soundButtons[playerId]
+      );
+
+
+    if (button) {
+
+      button.innerText =
+        "MUTE";
+
+    }
+
+  }
+
+  catch (error) {
+
+    console.log(
+      "Player is not ready yet."
+    );
+
+  }
 
 }
 
+
+/* =========================
+   PAUSE
+   ========================= */
+
+function pauseVideo(playerId) {
+
+  const player =
+    players[playerId];
+
+
+  if (!player) {
+    return;
+  }
+
+
+  try {
+
+    player.pauseVideo();
+
+  }
+
+  catch (error) {
+
+    console.log(
+      "Player is not ready yet."
+    );
+
+  }
+
+}
+
+
+/* =========================
+   SOUND ON / MUTE
+   ========================= */
 
 function toggleSound(
   playerId,
-  button
+  buttonId
 ) {
 
-  const soundIsOn =
-    button.getAttribute(
-      "data-sound"
-    ) === "on";
+  const player =
+    players[playerId];
 
-
-  if (soundIsOn) {
-
-    sendCommand(
-      playerId,
-      "mute"
+  const button =
+    document.getElementById(
+      buttonId
     );
 
-    button.innerText =
-      "SOUND ON";
 
-    button.setAttribute(
-      "data-sound",
-      "off"
-    );
+  if (!player || !button) {
+    return;
+  }
+
+
+  try {
+
+
+    if (player.isMuted()) {
+
+      player.unMute();
+
+      player.setVolume(
+        playerVolumes[playerId] || 50
+      );
+
+      button.innerText =
+        "MUTE";
+
+    }
+
+
+    else {
+
+      player.mute();
+
+      button.innerText =
+        "SOUND ON";
+
+    }
 
   }
 
-  else {
+  catch (error) {
 
-    sendCommand(
-      playerId,
-      "unMute"
-    );
-
-    sendCommand(
-      playerId,
-      "setVolume",
-      [50]
-    );
-
-    button.innerText =
-      "MUTE";
-
-    button.setAttribute(
-      "data-sound",
-      "on"
+    console.log(
+      "Sound control is not ready."
     );
 
   }
 
 }
 
+
+/* =========================
+   VOLUME
+   ========================= */
 
 function changeVolume(
   playerId,
   volume,
-  displayId
+  displayId,
+  buttonId
 ) {
+
+  const numericVolume =
+    Number(volume);
+
+
+  playerVolumes[playerId] =
+    numericVolume;
+
 
   document.getElementById(
     displayId
   ).innerText =
-    volume + "%";
+    numericVolume + "%";
 
-  sendCommand(
-    playerId,
-    "setVolume",
-    [Number(volume)]
-  );
 
-  if (
-    Number(volume) > 0
-  ) {
+  const player =
+    players[playerId];
 
-    sendCommand(
-      playerId,
-      "unMute"
+
+  if (!player) {
+    return;
+  }
+
+
+  try {
+
+    player.setVolume(
+      numericVolume
+    );
+
+
+    const button =
+      document.getElementById(
+        buttonId
+      );
+
+
+    if (numericVolume === 0) {
+
+      player.mute();
+
+      if (button) {
+
+        button.innerText =
+          "SOUND ON";
+
+      }
+
+    }
+
+
+    else {
+
+      player.unMute();
+
+      if (button) {
+
+        button.innerText =
+          "MUTE";
+
+      }
+
+    }
+
+  }
+
+  catch (error) {
+
+    console.log(
+      "Volume control is not ready."
     );
 
   }
@@ -984,4 +1354,4 @@ document.addEventListener(
 
 </body>
 
-    </html>
+  </html>
