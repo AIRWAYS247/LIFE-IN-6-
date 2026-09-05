@@ -508,13 +508,62 @@ footer {
     <span>REAL PEOPLE</span>
 
     <span class="status">
-      NEXT PICK
+      FEATURED
     </span>
 
   </div>
 
-  <div class="placeholder">
-    NEW STORY COMING
+
+  <div class="video-container">
+
+    <div id="player2"></div>
+
+  </div>
+
+
+  <div class="audio-controls">
+
+    <button
+      class="control-button"
+      onclick="playVideo('player2')">
+      PLAY
+    </button>
+
+    <button
+      class="control-button"
+      onclick="pauseVideo('player2')">
+      PAUSE
+    </button>
+
+    <button
+      id="sound2"
+      class="control-button"
+      onclick="toggleSound(
+        'player2',
+        'sound2'
+      )">
+      SOUND ON
+    </button>
+
+    <input
+      class="volume-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      oninput="changeVolume(
+        'player2',
+        this.value,
+        'vol2',
+        'sound2'
+      )">
+
+    <span
+      id="vol2"
+      class="volume-number">
+      50%
+    </span>
+
   </div>
 
 </section>
@@ -960,6 +1009,7 @@ const players = {};
 const playerVolumes = {
 
   player1: 50,
+  player2: 50,
   player3: 50,
   player4: 50,
   player5: 50
@@ -1002,7 +1052,45 @@ function onYouTubeIframeAPIReady() {
             function(event) {
 
               event.target.setVolume(50);
+              event.target.mute();
 
+            }
+
+        }
+
+      }
+    );
+
+
+
+  /* SCREEN 2 — REAL PEOPLE */
+
+  players.player2 =
+    new YT.Player(
+      "player2",
+      {
+
+        videoId:
+          "S1QDFp6DMk0",
+
+        playerVars: {
+
+          controls: 1,
+          playsinline: 1,
+          rel: 0,
+          mute: 1,
+          autoplay: 0,
+          modestbranding: 1,
+          origin: window.location.origin
+
+        },
+
+        events: {
+
+          onReady:
+            function(event) {
+
+              event.target.setVolume(50);
               event.target.mute();
 
             }
@@ -1042,7 +1130,6 @@ function onYouTubeIframeAPIReady() {
             function(event) {
 
               event.target.setVolume(50);
-
               event.target.mute();
 
             }
@@ -1082,7 +1169,6 @@ function onYouTubeIframeAPIReady() {
             function(event) {
 
               event.target.setVolume(50);
-
               event.target.mute();
 
             }
@@ -1122,7 +1208,6 @@ function onYouTubeIframeAPIReady() {
             function(event) {
 
               event.target.setVolume(50);
-
               event.target.mute();
 
             }
@@ -1164,6 +1249,7 @@ function playVideo(playerId) {
     const soundButtons = {
 
       player1: "sound1",
+      player2: "sound2",
       player3: "sound3",
       player4: "sound4",
       player5: "sound5"
