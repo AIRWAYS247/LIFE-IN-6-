@@ -532,13 +532,62 @@ footer {
     <span>AUSTRALIA</span>
 
     <span class="status">
-      NEXT PICK
+      FEATURED
     </span>
 
   </div>
 
-  <div class="placeholder">
-    AUSTRALIAN STORY COMING
+
+  <div class="video-container">
+
+    <div id="player3"></div>
+
+  </div>
+
+
+  <div class="audio-controls">
+
+    <button
+      class="control-button"
+      onclick="playVideo('player3')">
+      PLAY
+    </button>
+
+    <button
+      class="control-button"
+      onclick="pauseVideo('player3')">
+      PAUSE
+    </button>
+
+    <button
+      id="sound3"
+      class="control-button"
+      onclick="toggleSound(
+        'player3',
+        'sound3'
+      )">
+      SOUND ON
+    </button>
+
+    <input
+      class="volume-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      oninput="changeVolume(
+        'player3',
+        this.value,
+        'vol3',
+        'sound3'
+      )">
+
+    <span
+      id="vol3"
+      class="volume-number">
+      50%
+    </span>
+
   </div>
 
 </section>
@@ -911,6 +960,7 @@ const players = {};
 const playerVolumes = {
 
   player1: 50,
+  player3: 50,
   player4: 50,
   player5: 50
 
@@ -933,6 +983,46 @@ function onYouTubeIframeAPIReady() {
 
         videoId:
           "1mbe4F3YBqw",
+
+        playerVars: {
+
+          controls: 1,
+          playsinline: 1,
+          rel: 0,
+          mute: 1,
+          autoplay: 0,
+          modestbranding: 1,
+          origin: window.location.origin
+
+        },
+
+        events: {
+
+          onReady:
+            function(event) {
+
+              event.target.setVolume(50);
+
+              event.target.mute();
+
+            }
+
+        }
+
+      }
+    );
+
+
+
+  /* SCREEN 3 — AUSTRALIA */
+
+  players.player3 =
+    new YT.Player(
+      "player3",
+      {
+
+        videoId:
+          "ja8kM5ldRHc",
 
         playerVars: {
 
@@ -1074,6 +1164,7 @@ function playVideo(playerId) {
     const soundButtons = {
 
       player1: "sound1",
+      player3: "sound3",
       player4: "sound4",
       player5: "sound5"
 
@@ -1354,4 +1445,4 @@ document.addEventListener(
 
 </body>
 
-  </html>
+</html>
