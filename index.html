@@ -139,7 +139,7 @@ header {
 
 
 /* =========================
-   PLACEHOLDERS
+   SCREEN 6 PLACEHOLDER
    ========================= */
 
 .placeholder {
@@ -173,7 +173,8 @@ header {
   padding: 7px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 .control-button {
@@ -181,7 +182,7 @@ header {
   color: white;
   border: 1px solid #555;
   border-radius: 5px;
-  padding: 7px 9px;
+  padding: 7px 8px;
   font-size: 9px;
   font-weight: bold;
   cursor: pointer;
@@ -192,9 +193,18 @@ header {
   background: #333;
 }
 
+.seek-button {
+  background: #142331;
+  border-color: #34536b;
+}
+
+.seek-button:hover {
+  background: #1d3446;
+}
+
 .volume-slider {
   flex: 1;
-  min-width: 35px;
+  min-width: 65px;
 }
 
 .volume-number {
@@ -348,7 +358,11 @@ footer {
 
   .control-button {
     font-size: 6px;
-    padding: 5px;
+    padding: 6px 5px;
+  }
+
+  .volume-slider {
+    min-width: 55px;
   }
 
   .volume-number {
@@ -442,13 +456,17 @@ footer {
 
 
   <div class="video-container">
-
     <div id="player1"></div>
-
   </div>
 
 
   <div class="audio-controls">
+
+    <button
+      class="control-button seek-button"
+      onclick="rewindVideo('player1')">
+      −10 SEC
+    </button>
 
     <button
       class="control-button"
@@ -460,6 +478,12 @@ footer {
       class="control-button"
       onclick="pauseVideo('player1')">
       PAUSE
+    </button>
+
+    <button
+      class="control-button seek-button"
+      onclick="forwardVideo('player1')">
+      +10 SEC
     </button>
 
     <button
@@ -515,13 +539,17 @@ footer {
 
 
   <div class="video-container">
-
     <div id="player2"></div>
-
   </div>
 
 
   <div class="audio-controls">
+
+    <button
+      class="control-button seek-button"
+      onclick="rewindVideo('player2')">
+      −10 SEC
+    </button>
 
     <button
       class="control-button"
@@ -533,6 +561,12 @@ footer {
       class="control-button"
       onclick="pauseVideo('player2')">
       PAUSE
+    </button>
+
+    <button
+      class="control-button seek-button"
+      onclick="forwardVideo('player2')">
+      +10 SEC
     </button>
 
     <button
@@ -588,13 +622,17 @@ footer {
 
 
   <div class="video-container">
-
     <div id="player3"></div>
-
   </div>
 
 
   <div class="audio-controls">
+
+    <button
+      class="control-button seek-button"
+      onclick="rewindVideo('player3')">
+      −10 SEC
+    </button>
 
     <button
       class="control-button"
@@ -606,6 +644,12 @@ footer {
       class="control-button"
       onclick="pauseVideo('player3')">
       PAUSE
+    </button>
+
+    <button
+      class="control-button seek-button"
+      onclick="forwardVideo('player3')">
+      +10 SEC
     </button>
 
     <button
@@ -661,13 +705,17 @@ footer {
 
 
   <div class="video-container">
-
     <div id="player4"></div>
-
   </div>
 
 
   <div class="audio-controls">
+
+    <button
+      class="control-button seek-button"
+      onclick="rewindVideo('player4')">
+      −10 SEC
+    </button>
 
     <button
       class="control-button"
@@ -679,6 +727,12 @@ footer {
       class="control-button"
       onclick="pauseVideo('player4')">
       PAUSE
+    </button>
+
+    <button
+      class="control-button seek-button"
+      onclick="forwardVideo('player4')">
+      +10 SEC
     </button>
 
     <button
@@ -734,13 +788,17 @@ footer {
 
 
   <div class="video-container">
-
     <div id="player5"></div>
-
   </div>
 
 
   <div class="audio-controls">
+
+    <button
+      class="control-button seek-button"
+      onclick="rewindVideo('player5')">
+      −10 SEC
+    </button>
 
     <button
       class="control-button"
@@ -752,6 +810,12 @@ footer {
       class="control-button"
       onclick="pauseVideo('player5')">
       PAUSE
+    </button>
+
+    <button
+      class="control-button seek-button"
+      onclick="forwardVideo('player5')">
+      +10 SEC
     </button>
 
     <button
@@ -791,6 +855,7 @@ footer {
 
 <!-- =========================
      SCREEN 6 — LIVE / TRY THIS
+     READY FOR FUTURE VIDEO
      ========================= -->
 
 <section class="screen">
@@ -805,8 +870,81 @@ footer {
 
   </div>
 
-  <div class="placeholder">
+
+  <div
+    id="screen6Placeholder"
+    class="placeholder">
+
     BREATHWORK • MOVEMENT • LIVE
+
+  </div>
+
+
+  <div
+    id="screen6Video"
+    class="video-container"
+    style="display:none;">
+
+    <div id="player6"></div>
+
+  </div>
+
+
+  <div class="audio-controls">
+
+    <button
+      class="control-button seek-button"
+      onclick="rewindVideo('player6')">
+      −10 SEC
+    </button>
+
+    <button
+      class="control-button"
+      onclick="playVideo('player6')">
+      PLAY
+    </button>
+
+    <button
+      class="control-button"
+      onclick="pauseVideo('player6')">
+      PAUSE
+    </button>
+
+    <button
+      class="control-button seek-button"
+      onclick="forwardVideo('player6')">
+      +10 SEC
+    </button>
+
+    <button
+      id="sound6"
+      class="control-button"
+      onclick="toggleSound(
+        'player6',
+        'sound6'
+      )">
+      SOUND ON
+    </button>
+
+    <input
+      class="volume-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      oninput="changeVolume(
+        'player6',
+        this.value,
+        'vol6',
+        'sound6'
+      )">
+
+    <span
+      id="vol6"
+      class="volume-number">
+      50%
+    </span>
+
   </div>
 
 </section>
@@ -1001,6 +1139,25 @@ footer {
 
 
 /* =========================
+   SCREEN 6 VIDEO
+   ========================= */
+
+/*
+When you give me the sixth YouTube video,
+we only need to put its VIDEO ID between
+the quotation marks below.
+
+Example:
+
+const SCREEN6_VIDEO_ID = "abc123xyz";
+
+For now it stays blank.
+*/
+
+const SCREEN6_VIDEO_ID = "";
+
+
+/* =========================
    PLAYER STORAGE
    ========================= */
 
@@ -1012,7 +1169,8 @@ const playerVolumes = {
   player2: 50,
   player3: 50,
   player4: 50,
-  player5: 50
+  player5: 50,
+  player6: 50
 
 };
 
@@ -1024,54 +1182,82 @@ const playerVolumes = {
 function onYouTubeIframeAPIReady() {
 
 
-  /* SCREEN 1 — ANTHONY HOPKINS */
+  createPlayer(
+    "player1",
+    "1mbe4F3YBqw"
+  );
 
-  players.player1 =
-    new YT.Player(
-      "player1",
-      {
 
-        videoId:
-          "1mbe4F3YBqw",
+  createPlayer(
+    "player2",
+    "S1QDFp6DMk0"
+  );
 
-        playerVars: {
 
-          controls: 1,
-          playsinline: 1,
-          rel: 0,
-          mute: 1,
-          autoplay: 0,
-          modestbranding: 1,
-          origin: window.location.origin
+  createPlayer(
+    "player3",
+    "ja8kM5ldRHc"
+  );
 
-        },
 
-        events: {
+  createPlayer(
+    "player4",
+    "BQDDbesNPJ4"
+  );
 
-          onReady:
-            function(event) {
 
-              event.target.setVolume(50);
-              event.target.mute();
+  createPlayer(
+    "player5",
+    "bHo6do6fDPE"
+  );
 
-            }
 
-        }
+  /*
+  SCREEN 6
 
-      }
+  This automatically activates
+  when a video ID is added above.
+  */
+
+  if (SCREEN6_VIDEO_ID !== "") {
+
+    document.getElementById(
+      "screen6Placeholder"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "screen6Video"
+    ).style.display =
+      "block";
+
+
+    createPlayer(
+      "player6",
+      SCREEN6_VIDEO_ID
     );
 
+  }
+
+}
 
 
-  /* SCREEN 2 — REAL PEOPLE */
+/* =========================
+   PLAYER CREATOR
+   ========================= */
 
-  players.player2 =
+function createPlayer(
+  playerId,
+  videoId
+) {
+
+  players[playerId] =
     new YT.Player(
-      "player2",
+      playerId,
       {
 
-        videoId:
-          "S1QDFp6DMk0",
+        videoId: videoId,
 
         playerVars: {
 
@@ -1091,123 +1277,7 @@ function onYouTubeIframeAPIReady() {
             function(event) {
 
               event.target.setVolume(50);
-              event.target.mute();
 
-            }
-
-        }
-
-      }
-    );
-
-
-
-  /* SCREEN 3 — AUSTRALIA */
-
-  players.player3 =
-    new YT.Player(
-      "player3",
-      {
-
-        videoId:
-          "ja8kM5ldRHc",
-
-        playerVars: {
-
-          controls: 1,
-          playsinline: 1,
-          rel: 0,
-          mute: 1,
-          autoplay: 0,
-          modestbranding: 1,
-          origin: window.location.origin
-
-        },
-
-        events: {
-
-          onReady:
-            function(event) {
-
-              event.target.setVolume(50);
-              event.target.mute();
-
-            }
-
-        }
-
-      }
-    );
-
-
-
-  /* SCREEN 4 — TIM MINCHIN */
-
-  players.player4 =
-    new YT.Player(
-      "player4",
-      {
-
-        videoId:
-          "BQDDbesNPJ4",
-
-        playerVars: {
-
-          controls: 1,
-          playsinline: 1,
-          rel: 0,
-          mute: 1,
-          autoplay: 0,
-          modestbranding: 1,
-          origin: window.location.origin
-
-        },
-
-        events: {
-
-          onReady:
-            function(event) {
-
-              event.target.setVolume(50);
-              event.target.mute();
-
-            }
-
-        }
-
-      }
-    );
-
-
-
-  /* SCREEN 5 — MIND + BODY */
-
-  players.player5 =
-    new YT.Player(
-      "player5",
-      {
-
-        videoId:
-          "bHo6do6fDPE",
-
-        playerVars: {
-
-          controls: 1,
-          playsinline: 1,
-          rel: 0,
-          mute: 1,
-          autoplay: 0,
-          modestbranding: 1,
-          origin: window.location.origin
-
-        },
-
-        events: {
-
-          onReady:
-            function(event) {
-
-              event.target.setVolume(50);
               event.target.mute();
 
             }
@@ -1246,29 +1316,10 @@ function playVideo(playerId) {
     player.playVideo();
 
 
-    const soundButtons = {
-
-      player1: "sound1",
-      player2: "sound2",
-      player3: "sound3",
-      player4: "sound4",
-      player5: "sound5"
-
-    };
-
-
-    const button =
-      document.getElementById(
-        soundButtons[playerId]
-      );
-
-
-    if (button) {
-
-      button.innerText =
-        "MUTE";
-
-    }
+    updateSoundButton(
+      playerId,
+      "MUTE"
+    );
 
   }
 
@@ -1308,6 +1359,106 @@ function pauseVideo(playerId) {
 
     console.log(
       "Player is not ready yet."
+    );
+
+  }
+
+}
+
+
+/* =========================
+   REWIND 10 SECONDS
+   ========================= */
+
+function rewindVideo(playerId) {
+
+  const player =
+    players[playerId];
+
+
+  if (!player) {
+    return;
+  }
+
+
+  try {
+
+    const currentTime =
+      player.getCurrentTime();
+
+
+    player.seekTo(
+      Math.max(
+        0,
+        currentTime - 10
+      ),
+      true
+    );
+
+  }
+
+  catch (error) {
+
+    console.log(
+      "Rewind is not ready."
+    );
+
+  }
+
+}
+
+
+/* =========================
+   FORWARD 10 SECONDS
+   ========================= */
+
+function forwardVideo(playerId) {
+
+  const player =
+    players[playerId];
+
+
+  if (!player) {
+    return;
+  }
+
+
+  try {
+
+    const currentTime =
+      player.getCurrentTime();
+
+
+    const duration =
+      player.getDuration();
+
+
+    let newTime =
+      currentTime + 10;
+
+
+    if (
+      duration &&
+      newTime > duration
+    ) {
+
+      newTime =
+        duration;
+
+    }
+
+
+    player.seekTo(
+      newTime,
+      true
+    );
+
+  }
+
+  catch (error) {
+
+    console.log(
+      "Fast forward is not ready."
     );
 
   }
@@ -1458,6 +1609,43 @@ function changeVolume(
     console.log(
       "Volume control is not ready."
     );
+
+  }
+
+}
+
+
+/* =========================
+   SOUND BUTTON HELPER
+   ========================= */
+
+function updateSoundButton(
+  playerId,
+  text
+) {
+
+  const soundButtons = {
+
+    player1: "sound1",
+    player2: "sound2",
+    player3: "sound3",
+    player4: "sound4",
+    player5: "sound5",
+    player6: "sound6"
+
+  };
+
+
+  const button =
+    document.getElementById(
+      soundButtons[playerId]
+    );
+
+
+  if (button) {
+
+    button.innerText =
+      text;
 
   }
 
