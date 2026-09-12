@@ -27,6 +27,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* =========================
+   HEADER
+   ========================= */
+
 header {
   min-height: 72px;
   background: linear-gradient(
@@ -76,6 +81,11 @@ header {
   letter-spacing: 1px;
 }
 
+
+/* =========================
+   SIX SCREEN WALL
+   ========================= */
+
 .wall {
   width: 100%;
   display: grid;
@@ -107,6 +117,11 @@ header {
   font-size: 9px;
 }
 
+
+/* =========================
+   VIDEO
+   ========================= */
+
 .video-container {
   position: relative;
   width: 100%;
@@ -121,6 +136,11 @@ header {
   height: 100%;
   border: 0;
 }
+
+
+/* =========================
+   VIDEO CONTROLS
+   ========================= */
 
 .audio-controls {
   background: #111;
@@ -167,6 +187,11 @@ header {
   text-align: right;
 }
 
+
+/* =========================
+   FOOTER
+   ========================= */
+
 footer {
   text-align: center;
   padding: 18px 10px 22px;
@@ -189,6 +214,11 @@ footer {
   text-decoration: underline;
   cursor: pointer;
 }
+
+
+/* =========================
+   DISCLAIMER
+   ========================= */
 
 .modal {
   display: none;
@@ -240,6 +270,11 @@ footer {
   cursor: pointer;
 }
 
+
+/* =========================
+   TABLET
+   ========================= */
+
 @media (max-width: 950px) {
 
   .wall {
@@ -248,6 +283,11 @@ footer {
   }
 
 }
+
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 700px) {
 
@@ -329,15 +369,8 @@ footer {
   <div class="logo-area">
 
     <div class="logo">
-
-      <span class="logo-life">
-        LIFE IN
-      </span>
-
-      <span class="logo-six">
-        6
-      </span>
-
+      <span class="logo-life">LIFE IN</span>
+      <span class="logo-six">6</span>
     </div>
 
     <div class="tagline">
@@ -346,7 +379,6 @@ footer {
     </div>
 
   </div>
-
 
   <div class="header-message">
     WATCH • LISTEN • BREATHE<br>
@@ -376,24 +408,16 @@ footer {
   <div class="audio-controls">
 
     <button class="control-button seek-button"
-      onclick="rewindVideo('player1')">
-      −10 SEC
-    </button>
+      onclick="rewindVideo('player1')">−10 SEC</button>
 
     <button class="control-button"
-      onclick="playVideo('player1')">
-      PLAY
-    </button>
+      onclick="playVideo('player1')">PLAY</button>
 
     <button class="control-button"
-      onclick="pauseVideo('player1')">
-      PAUSE
-    </button>
+      onclick="pauseVideo('player1')">PAUSE</button>
 
     <button class="control-button seek-button"
-      onclick="forwardVideo('player1')">
-      +10 SEC
-    </button>
+      onclick="forwardVideo('player1')">+10 SEC</button>
 
     <button id="sound1"
       class="control-button"
@@ -401,8 +425,7 @@ footer {
       SOUND ON
     </button>
 
-    <input
-      class="volume-slider"
+    <input class="volume-slider"
       type="range"
       min="0"
       max="100"
@@ -604,7 +627,7 @@ footer {
 </section>
 
 
-<!-- SCREEN 6 -->
+<!-- SCREEN 6 — NEW LIVE STREAM -->
 
 <section class="screen">
 
@@ -664,9 +687,7 @@ footer {
   <button
     class="disclaimer-link"
     onclick="openDisclaimer()">
-
     Terms, Disclaimer & Content Owners
-
   </button>
 
 </footer>
@@ -687,121 +708,86 @@ footer {
     </button>
 
     <h2>
-      Terms, Disclaimer
-      & Content Owners
+      Terms, Disclaimer & Content Owners
     </h2>
 
     <p>
-      LIFE IN 6 is an independent
-      content-curation platform featuring
-      selected stories, conversations,
-      music, exercises and other material
-      that we believe may be interesting,
-      useful or worth experiencing.
+      LIFE IN 6 is an independent content-curation platform featuring
+      selected stories, conversations, music, exercises and other material
+      that we believe may be interesting, useful or worth experiencing.
     </p>
 
     <p>
-      LIFE IN 6 does not own or produce
-      third-party videos, live streams,
-      websites or other external content
-      displayed or linked through this
-      site unless expressly stated
-      otherwise.
+      LIFE IN 6 does not own or produce third-party videos, live streams,
+      websites or other external content displayed or linked through this
+      site unless expressly stated otherwise.
     </p>
 
     <p>
-      All third-party content remains
-      the property of its respective
-      creators, publishers and copyright
-      owners.
+      All third-party content remains the property of its respective
+      creators, publishers and copyright owners.
     </p>
 
     <p>
-      Content featured on LIFE IN 6 is
-      independently selected and curated
-      according to our interests,
-      preferences and the themes of the
-      platform.
+      Content featured on LIFE IN 6 is independently selected and curated
+      according to our interests, preferences and the themes of the platform.
     </p>
 
     <p>
-      Inclusion of third-party content
-      does not imply sponsorship,
-      endorsement, partnership or
-      affiliation between LIFE IN 6 and
-      any creator, organisation,
-      publisher or platform.
+      Inclusion of third-party content does not imply sponsorship,
+      endorsement, partnership or affiliation between LIFE IN 6 and any
+      creator, organisation, publisher or platform.
     </p>
 
     <p>
-      Third-party content may be changed,
-      restricted, interrupted, removed
-      or made unavailable by its owner
-      or hosting platform at any time.
+      Third-party content may be changed, restricted, interrupted, removed
+      or made unavailable by its owner or hosting platform at any time.
     </p>
 
     <p>
-      We encourage viewers to support
-      original creators through their
+      We encourage viewers to support original creators through their
       official channels.
     </p>
 
-    <h3>
-      Health & Wellbeing
-    </h3>
+    <h3>Health & Wellbeing</h3>
 
     <p>
-      LIFE IN 6 is not a medical,
-      psychological, counselling or
-      healthcare service.
+      LIFE IN 6 is not a medical, psychological, counselling or healthcare
+      service.
     </p>
 
     <p>
-      Videos, breathwork, meditation,
-      exercise and other wellbeing
-      content featured on the platform
-      are provided for general interest
-      and educational or inspirational
-      purposes only.
+      Videos, breathwork, meditation, exercise and other wellbeing content
+      featured on the platform are provided for general interest and
+      educational or inspirational purposes only.
     </p>
 
     <p>
-      Content on LIFE IN 6 is not a
-      substitute for professional
-      medical, psychological or mental
-      health advice, diagnosis or
-      treatment.
+      Content on LIFE IN 6 is not a substitute for professional medical,
+      psychological or mental health advice, diagnosis or treatment.
     </p>
 
     <p>
-      Viewers should use their own
-      judgement and seek appropriately
-      qualified professional assistance
-      where necessary.
+      Viewers should use their own judgement and seek appropriately
+      qualified professional assistance where necessary.
     </p>
 
-    <h3>
-      Content Owners
-    </h3>
+    <h3>Content Owners</h3>
 
     <p>
-      LIFE IN 6 respects the rights of
-      content creators and copyright
-      owners.
+      LIFE IN 6 respects the rights of content creators and copyright owners.
     </p>
 
     <p>
-      If you are the owner or authorised
-      representative of content featured
-      through LIFE IN 6 and would prefer
-      that it not be included, please
-      contact us and legitimate removal
-      requests will be reviewed promptly.
+      If you are the owner or authorised representative of content featured
+      through LIFE IN 6 and would prefer that it not be included, please
+      contact us and legitimate removal requests will be reviewed promptly.
     </p>
 
   </div>
 
 </div>
+
 
 
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -850,9 +836,11 @@ function onYouTubeIframeAPIReady() {
     "bHo6do6fDPE"
   );
 
+  /* SCREEN 6 — NEW LIVE STREAM */
+
   createPlayer(
     "player6",
-    "4eDKQO-T8To"
+    "jjQQ9qr04Ag"
   );
 
 }
@@ -1265,5 +1253,7 @@ document.addEventListener(
 
 </script>
 
+
 </body>
-</html>
+
+      </html>
