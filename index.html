@@ -27,18 +27,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* =========================
-   HEADER
-   ========================= */
+/* HEADER */
 
 header {
   min-height: 72px;
-  background: linear-gradient(
-    135deg,
-    #07111b,
-    #020304
-  );
+  background: linear-gradient(135deg,#07111b,#020304);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,15 +74,12 @@ header {
   letter-spacing: 1px;
 }
 
-
-/* =========================
-   SIX SCREEN WALL
-   ========================= */
+/* SIX SCREEN WALL */
 
 .wall {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 8px;
   padding: 8px;
 }
@@ -117,10 +107,7 @@ header {
   font-size: 9px;
 }
 
-
-/* =========================
-   VIDEO
-   ========================= */
+/* VIDEO */
 
 .video-container {
   position: relative;
@@ -137,10 +124,7 @@ header {
   border: 0;
 }
 
-
-/* =========================
-   VIDEO CONTROLS
-   ========================= */
+/* CONTROLS */
 
 .audio-controls {
   background: #111;
@@ -187,10 +171,7 @@ header {
   text-align: right;
 }
 
-
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 
 footer {
   text-align: center;
@@ -215,10 +196,7 @@ footer {
   cursor: pointer;
 }
 
-
-/* =========================
-   DISCLAIMER POPUP
-   ========================= */
+/* DISCLAIMER */
 
 .modal {
   display: none;
@@ -270,24 +248,17 @@ footer {
   cursor: pointer;
 }
 
-
-/* =========================
-   TABLET
-   ========================= */
+/* TABLET */
 
 @media (max-width: 950px) {
 
   .wall {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
   }
 
 }
 
-
-/* =========================
-   MOBILE
-   ========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
@@ -309,8 +280,7 @@ footer {
   }
 
   .wall {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 5px;
     padding: 5px;
   }
@@ -357,649 +327,445 @@ footer {
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
 
-  <div class="logo-area">
+<div class="logo-area">
 
-    <div class="logo">
+<div class="logo">
+<span class="logo-life">LIFE IN</span>
+<span class="logo-six">6</span>
+</div>
 
-      <span class="logo-life">
-        LIFE IN
-      </span>
+<div class="tagline">
+Stories worth watching. Things worth trying.
+</div>
 
-      <span class="logo-six">
-        6
-      </span>
+</div>
 
-    </div>
-
-    <div class="tagline">
-      Stories worth watching.
-      Things worth trying.
-    </div>
-
-  </div>
-
-
-  <div class="header-message">
-    WATCH • LISTEN • BREATHE<br>
-    MOVE • LEARN • CONNECT
-  </div>
+<div class="header-message">
+WATCH • LISTEN • BREATHE<br>
+MOVE • LEARN • CONNECT
+</div>
 
 </header>
 
 
-
 <main class="wall">
 
-
-<!-- SCREEN 1 — STORIES -->
+<!-- SCREEN 1 -->
 
 <section class="screen">
 
-  <div class="screen-title">
-    <span>STORIES</span>
-    <span class="status">FEATURED</span>
-  </div>
+<div class="screen-title">
+<span>STORIES</span>
+<span class="status">FEATURED</span>
+</div>
 
-  <div class="video-container">
-    <div id="player1"></div>
-  </div>
+<div class="video-container">
+<div id="player1"></div>
+</div>
 
-  <div class="audio-controls">
+<div class="audio-controls">
 
-    <button
-      class="control-button seek-button"
-      onclick="rewindVideo('player1')">
-      −10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="rewindVideo('player1')">
+−10 SEC
+</button>
 
-    <button
-      class="control-button"
-      onclick="playVideo('player1')">
-      PLAY
-    </button>
+<button class="control-button"
+onclick="playVideo('player1')">
+PLAY
+</button>
 
-    <button
-      class="control-button"
-      onclick="pauseVideo('player1')">
-      PAUSE
-    </button>
+<button class="control-button"
+onclick="pauseVideo('player1')">
+PAUSE
+</button>
 
-    <button
-      class="control-button seek-button"
-      onclick="forwardVideo('player1')">
-      +10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="forwardVideo('player1')">
++10 SEC
+</button>
 
-    <button
-      id="sound1"
-      class="control-button"
-      onclick="toggleSound('player1','sound1')">
-      SOUND ON
-    </button>
+<button id="sound1"
+class="control-button"
+onclick="toggleSound('player1','sound1')">
+SOUND ON
+</button>
 
-    <input
-      class="volume-slider"
-      type="range"
-      min="0"
-      max="100"
-      value="50"
-      oninput="changeVolume(
-        'player1',
-        this.value,
-        'vol1',
-        'sound1'
-      )">
+<input
+class="volume-slider"
+type="range"
+min="0"
+max="100"
+value="50"
+oninput="changeVolume('player1',this.value,'vol1','sound1')">
 
-    <span id="vol1" class="volume-number">
-      50%
-    </span>
+<span id="vol1" class="volume-number">50%</span>
 
-  </div>
+</div>
 
 </section>
 
 
-
-<!-- SCREEN 2 — REAL PEOPLE -->
+<!-- SCREEN 2 -->
 
 <section class="screen">
 
-  <div class="screen-title">
-    <span>REAL PEOPLE</span>
-    <span class="status">FEATURED</span>
-  </div>
+<div class="screen-title">
+<span>REAL PEOPLE</span>
+<span class="status">FEATURED</span>
+</div>
 
-  <div class="video-container">
-    <div id="player2"></div>
-  </div>
+<div class="video-container">
+<div id="player2"></div>
+</div>
 
-  <div class="audio-controls">
+<div class="audio-controls">
 
-    <button
-      class="control-button seek-button"
-      onclick="rewindVideo('player2')">
-      −10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="rewindVideo('player2')">−10 SEC</button>
 
-    <button
-      class="control-button"
-      onclick="playVideo('player2')">
-      PLAY
-    </button>
+<button class="control-button"
+onclick="playVideo('player2')">PLAY</button>
 
-    <button
-      class="control-button"
-      onclick="pauseVideo('player2')">
-      PAUSE
-    </button>
+<button class="control-button"
+onclick="pauseVideo('player2')">PAUSE</button>
 
-    <button
-      class="control-button seek-button"
-      onclick="forwardVideo('player2')">
-      +10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="forwardVideo('player2')">+10 SEC</button>
 
-    <button
-      id="sound2"
-      class="control-button"
-      onclick="toggleSound('player2','sound2')">
-      SOUND ON
-    </button>
+<button id="sound2"
+class="control-button"
+onclick="toggleSound('player2','sound2')">
+SOUND ON
+</button>
 
-    <input
-      class="volume-slider"
-      type="range"
-      min="0"
-      max="100"
-      value="50"
-      oninput="changeVolume(
-        'player2',
-        this.value,
-        'vol2',
-        'sound2'
-      )">
+<input class="volume-slider"
+type="range"
+min="0"
+max="100"
+value="50"
+oninput="changeVolume('player2',this.value,'vol2','sound2')">
 
-    <span id="vol2" class="volume-number">
-      50%
-    </span>
+<span id="vol2" class="volume-number">50%</span>
 
-  </div>
+</div>
 
 </section>
 
 
-
-<!-- SCREEN 3 — AUSTRALIA -->
+<!-- SCREEN 3 -->
 
 <section class="screen">
 
-  <div class="screen-title">
-    <span>AUSTRALIA</span>
-    <span class="status">FEATURED</span>
-  </div>
+<div class="screen-title">
+<span>AUSTRALIA</span>
+<span class="status">FEATURED</span>
+</div>
 
-  <div class="video-container">
-    <div id="player3"></div>
-  </div>
+<div class="video-container">
+<div id="player3"></div>
+</div>
 
-  <div class="audio-controls">
+<div class="audio-controls">
 
-    <button
-      class="control-button seek-button"
-      onclick="rewindVideo('player3')">
-      −10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="rewindVideo('player3')">−10 SEC</button>
 
-    <button
-      class="control-button"
-      onclick="playVideo('player3')">
-      PLAY
-    </button>
+<button class="control-button"
+onclick="playVideo('player3')">PLAY</button>
 
-    <button
-      class="control-button"
-      onclick="pauseVideo('player3')">
-      PAUSE
-    </button>
+<button class="control-button"
+onclick="pauseVideo('player3')">PAUSE</button>
 
-    <button
-      class="control-button seek-button"
-      onclick="forwardVideo('player3')">
-      +10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="forwardVideo('player3')">+10 SEC</button>
 
-    <button
-      id="sound3"
-      class="control-button"
-      onclick="toggleSound('player3','sound3')">
-      SOUND ON
-    </button>
+<button id="sound3"
+class="control-button"
+onclick="toggleSound('player3','sound3')">
+SOUND ON
+</button>
 
-    <input
-      class="volume-slider"
-      type="range"
-      min="0"
-      max="100"
-      value="50"
-      oninput="changeVolume(
-        'player3',
-        this.value,
-        'vol3',
-        'sound3'
-      )">
+<input class="volume-slider"
+type="range"
+min="0"
+max="100"
+value="50"
+oninput="changeVolume('player3',this.value,'vol3','sound3')">
 
-    <span id="vol3" class="volume-number">
-      50%
-    </span>
+<span id="vol3" class="volume-number">50%</span>
 
-  </div>
+</div>
 
 </section>
 
 
-
-<!-- SCREEN 4 — MUSIC + RESET -->
+<!-- SCREEN 4 -->
 
 <section class="screen">
 
-  <div class="screen-title">
-    <span>MUSIC + RESET</span>
-    <span class="status">FEATURED</span>
-  </div>
+<div class="screen-title">
+<span>MUSIC + RESET</span>
+<span class="status">FEATURED</span>
+</div>
 
-  <div class="video-container">
-    <div id="player4"></div>
-  </div>
+<div class="video-container">
+<div id="player4"></div>
+</div>
 
-  <div class="audio-controls">
+<div class="audio-controls">
 
-    <button
-      class="control-button seek-button"
-      onclick="rewindVideo('player4')">
-      −10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="rewindVideo('player4')">−10 SEC</button>
 
-    <button
-      class="control-button"
-      onclick="playVideo('player4')">
-      PLAY
-    </button>
+<button class="control-button"
+onclick="playVideo('player4')">PLAY</button>
 
-    <button
-      class="control-button"
-      onclick="pauseVideo('player4')">
-      PAUSE
-    </button>
+<button class="control-button"
+onclick="pauseVideo('player4')">PAUSE</button>
 
-    <button
-      class="control-button seek-button"
-      onclick="forwardVideo('player4')">
-      +10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="forwardVideo('player4')">+10 SEC</button>
 
-    <button
-      id="sound4"
-      class="control-button"
-      onclick="toggleSound('player4','sound4')">
-      SOUND ON
-    </button>
+<button id="sound4"
+class="control-button"
+onclick="toggleSound('player4','sound4')">
+SOUND ON
+</button>
 
-    <input
-      class="volume-slider"
-      type="range"
-      min="0"
-      max="100"
-      value="50"
-      oninput="changeVolume(
-        'player4',
-        this.value,
-        'vol4',
-        'sound4'
-      )">
+<input class="volume-slider"
+type="range"
+min="0"
+max="100"
+value="50"
+oninput="changeVolume('player4',this.value,'vol4','sound4')">
 
-    <span id="vol4" class="volume-number">
-      50%
-    </span>
+<span id="vol4" class="volume-number">50%</span>
 
-  </div>
+</div>
 
 </section>
 
 
-
-<!-- SCREEN 5 — MIND + BODY -->
+<!-- SCREEN 5 -->
 
 <section class="screen">
 
-  <div class="screen-title">
-    <span>MIND + BODY</span>
-    <span class="status">TRY THIS</span>
-  </div>
+<div class="screen-title">
+<span>MIND + BODY</span>
+<span class="status">TRY THIS</span>
+</div>
 
-  <div class="video-container">
-    <div id="player5"></div>
-  </div>
+<div class="video-container">
+<div id="player5"></div>
+</div>
 
-  <div class="audio-controls">
+<div class="audio-controls">
 
-    <button
-      class="control-button seek-button"
-      onclick="rewindVideo('player5')">
-      −10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="rewindVideo('player5')">−10 SEC</button>
 
-    <button
-      class="control-button"
-      onclick="playVideo('player5')">
-      PLAY
-    </button>
+<button class="control-button"
+onclick="playVideo('player5')">PLAY</button>
 
-    <button
-      class="control-button"
-      onclick="pauseVideo('player5')">
-      PAUSE
-    </button>
+<button class="control-button"
+onclick="pauseVideo('player5')">PAUSE</button>
 
-    <button
-      class="control-button seek-button"
-      onclick="forwardVideo('player5')">
-      +10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="forwardVideo('player5')">+10 SEC</button>
 
-    <button
-      id="sound5"
-      class="control-button"
-      onclick="toggleSound('player5','sound5')">
-      SOUND ON
-    </button>
+<button id="sound5"
+class="control-button"
+onclick="toggleSound('player5','sound5')">
+SOUND ON
+</button>
 
-    <input
-      class="volume-slider"
-      type="range"
-      min="0"
-      max="100"
-      value="50"
-      oninput="changeVolume(
-        'player5',
-        this.value,
-        'vol5',
-        'sound5'
-      )">
+<input class="volume-slider"
+type="range"
+min="0"
+max="100"
+value="50"
+oninput="changeVolume('player5',this.value,'vol5','sound5')">
 
-    <span id="vol5" class="volume-number">
-      50%
-    </span>
+<span id="vol5" class="volume-number">50%</span>
 
-  </div>
+</div>
 
 </section>
 
 
-
-<!-- SCREEN 6 — WORLDWIDE -->
+<!-- SCREEN 6 — NEW LIVE STREAM -->
 
 <section class="screen">
 
-  <div class="screen-title">
-    <span>WORLDWIDE</span>
-    <span class="status">FEATURED</span>
-  </div>
+<div class="screen-title">
+<span>WORLDWIDE</span>
+<span class="status">LIVE</span>
+</div>
 
-  <div class="video-container">
-    <div id="player6"></div>
-  </div>
+<div class="video-container">
+<div id="player6"></div>
+</div>
 
-  <div class="audio-controls">
+<div class="audio-controls">
 
-    <button
-      class="control-button seek-button"
-      onclick="rewindVideo('player6')">
-      −10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="rewindVideo('player6')">−10 SEC</button>
 
-    <button
-      class="control-button"
-      onclick="playVideo('player6')">
-      PLAY
-    </button>
+<button class="control-button"
+onclick="playVideo('player6')">PLAY</button>
 
-    <button
-      class="control-button"
-      onclick="pauseVideo('player6')">
-      PAUSE
-    </button>
+<button class="control-button"
+onclick="pauseVideo('player6')">PAUSE</button>
 
-    <button
-      class="control-button seek-button"
-      onclick="forwardVideo('player6')">
-      +10 SEC
-    </button>
+<button class="control-button seek-button"
+onclick="forwardVideo('player6')">+10 SEC</button>
 
-    <button
-      id="sound6"
-      class="control-button"
-      onclick="toggleSound('player6','sound6')">
-      SOUND ON
-    </button>
+<button id="sound6"
+class="control-button"
+onclick="toggleSound('player6','sound6')">
+SOUND ON
+</button>
 
-    <input
-      class="volume-slider"
-      type="range"
-      min="0"
-      max="100"
-      value="50"
-      oninput="changeVolume(
-        'player6',
-        this.value,
-        'vol6',
-        'sound6'
-      )">
+<input class="volume-slider"
+type="range"
+min="0"
+max="100"
+value="50"
+oninput="changeVolume('player6',this.value,'vol6','sound6')">
 
-    <span id="vol6" class="volume-number">
-      50%
-    </span>
+<span id="vol6" class="volume-number">50%</span>
 
-  </div>
+</div>
 
 </section>
-
 
 </main>
 
 
-
 <footer>
 
-  <div class="footer-line">
-    SIX THINGS • ONE LIFE
-  </div>
+<div class="footer-line">
+SIX THINGS • ONE LIFE
+</div>
 
-  <button
-    class="disclaimer-link"
-    onclick="openDisclaimer()">
-
-    Terms, Disclaimer & Content Owners
-
-  </button>
+<button class="disclaimer-link"
+onclick="openDisclaimer()">
+Terms, Disclaimer & Content Owners
+</button>
 
 </footer>
 
 
+<div id="disclaimerModal"
+class="modal"
+onclick="closeFromBackground(event)">
 
-<div
-  id="disclaimerModal"
-  class="modal"
-  onclick="closeFromBackground(event)">
+<div class="modal-content">
 
-  <div class="modal-content">
+<button class="close-button"
+onclick="closeDisclaimer()">
+&times;
+</button>
 
-    <button
-      class="close-button"
-      onclick="closeDisclaimer()">
-      &times;
-    </button>
+<h2>Terms, Disclaimer & Content Owners</h2>
 
+<p>
+LIFE IN 6 is an independent content-curation platform featuring
+selected stories, conversations, music, exercises and other material
+that we believe may be interesting, useful or worth experiencing.
+</p>
 
-    <h2>
-      Terms, Disclaimer
-      & Content Owners
-    </h2>
+<p>
+LIFE IN 6 does not own or produce third-party videos, live streams,
+websites or other external content displayed or linked through this
+site unless expressly stated otherwise.
+</p>
 
+<p>
+All third-party content remains the property of its respective
+creators, publishers and copyright owners.
+</p>
 
-    <p>
-      LIFE IN 6 is an independent
-      content-curation platform featuring
-      selected stories, conversations,
-      music, exercises and other material
-      that we believe may be interesting,
-      useful or worth experiencing.
-    </p>
+<p>
+Content featured on LIFE IN 6 is independently selected and curated
+according to our interests, preferences and the themes of the platform.
+</p>
 
+<p>
+Inclusion of third-party content does not imply sponsorship,
+endorsement, partnership or affiliation between LIFE IN 6 and any
+creator, organisation, publisher or platform.
+</p>
 
-    <p>
-      LIFE IN 6 does not own or produce
-      third-party videos, live streams,
-      websites or other external content
-      displayed or linked through this
-      site unless expressly stated
-      otherwise.
-    </p>
+<p>
+Third-party content may be changed, restricted, interrupted, removed
+or made unavailable by its owner or hosting platform at any time.
+</p>
 
+<p>
+We encourage viewers to support original creators through their
+official channels.
+</p>
 
-    <p>
-      All third-party content remains
-      the property of its respective
-      creators, publishers and copyright
-      owners.
-    </p>
+<h3>Health & Wellbeing</h3>
 
+<p>
+LIFE IN 6 is not a medical, psychological, counselling or healthcare
+service.
+</p>
 
-    <p>
-      Content featured on LIFE IN 6 is
-      independently selected and curated
-      according to our interests,
-      preferences and the themes of the
-      platform.
-    </p>
+<p>
+Videos, breathwork, meditation, exercise and other wellbeing content
+featured on the platform are provided for general interest and
+educational or inspirational purposes only.
+</p>
 
+<p>
+Content on LIFE IN 6 is not a substitute for professional medical,
+psychological or mental health advice, diagnosis or treatment.
+</p>
 
-    <p>
-      Inclusion of third-party content
-      does not imply sponsorship,
-      endorsement, partnership or
-      affiliation between LIFE IN 6 and
-      any creator, organisation,
-      publisher or platform.
-    </p>
+<p>
+Viewers should use their own judgement and seek appropriately
+qualified professional assistance where necessary.
+</p>
 
+<h3>Content Owners</h3>
 
-    <p>
-      Third-party content may be changed,
-      restricted, interrupted, removed
-      or made unavailable by its owner
-      or hosting platform at any time.
-    </p>
+<p>
+LIFE IN 6 respects the rights of content creators and copyright owners.
+</p>
 
-
-    <p>
-      We encourage viewers to support
-      original creators through their
-      official channels.
-    </p>
-
-
-    <h3>
-      Health & Wellbeing
-    </h3>
-
-
-    <p>
-      LIFE IN 6 is not a medical,
-      psychological, counselling or
-      healthcare service.
-    </p>
-
-
-    <p>
-      Videos, breathwork, meditation,
-      exercise and other wellbeing
-      content featured on the platform
-      are provided for general interest
-      and educational or inspirational
-      purposes only.
-    </p>
-
-
-    <p>
-      Content on LIFE IN 6 is not a
-      substitute for professional
-      medical, psychological or mental
-      health advice, diagnosis or
-      treatment.
-    </p>
-
-
-    <p>
-      Viewers should use their own
-      judgement and seek appropriately
-      qualified professional assistance
-      where necessary.
-    </p>
-
-
-    <h3>
-      Content Owners
-    </h3>
-
-
-    <p>
-      LIFE IN 6 respects the rights of
-      content creators and copyright
-      owners.
-    </p>
-
-
-    <p>
-      If you are the owner or authorised
-      representative of content featured
-      through LIFE IN 6 and would prefer
-      that it not be included, please
-      contact us and legitimate removal
-      requests will be reviewed promptly.
-    </p>
-
-  </div>
+<p>
+If you are the owner or authorised representative of content featured
+through LIFE IN 6 and would prefer that it not be included, please
+contact us and legitimate removal requests will be reviewed promptly.
+</p>
 
 </div>
-
+</div>
 
 
 <script src="https://www.youtube.com/iframe_api"></script>
 
-
 <script>
-
 
 const players = {};
 
 const playerVolumes = {
-
   player1: 50,
   player2: 50,
   player3: 50,
   player4: 50,
   player5: 50,
   player6: 50
-
 };
 
 
@@ -1030,64 +796,54 @@ function onYouTubeIframeAPIReady() {
     "bHo6do6fDPE"
   );
 
+  /* NEW SCREEN 6 LIVE STREAM */
+
   createPlayer(
     "player6",
-    "Oul9nDB06yQ"
+    "4eDKQO-T8To"
   );
 
 }
 
 
-function createPlayer(
-  playerId,
-  videoId
-) {
+function createPlayer(playerId,videoId) {
 
   players[playerId] =
-    new YT.Player(
-      playerId,
-      {
+    new YT.Player(playerId, {
 
-        videoId: videoId,
+      videoId: videoId,
 
-        playerVars: {
+      playerVars: {
+        controls: 1,
+        playsinline: 1,
+        rel: 0,
+        mute: 1,
+        autoplay: 0,
+        modestbranding: 1,
+        origin: window.location.origin
+      },
 
-          controls: 1,
-          playsinline: 1,
-          rel: 0,
-          mute: 1,
-          autoplay: 0,
-          modestbranding: 1,
-          origin: window.location.origin
+      events: {
 
-        },
+        onReady: function(event) {
 
-        events: {
-
-          onReady:
-            function(event) {
-
-              event.target.setVolume(50);
-              event.target.mute();
-
-            }
+          event.target.setVolume(50);
+          event.target.mute();
 
         }
 
       }
-    );
+
+    });
 
 }
 
 
 function playVideo(playerId) {
 
-  const player =
-    players[playerId];
+  const player = players[playerId];
 
-  if (!player) {
-    return;
-  }
+  if (!player) return;
 
   try {
 
@@ -1104,13 +860,9 @@ function playVideo(playerId) {
       "MUTE"
     );
 
-  }
+  } catch(error) {
 
-  catch (error) {
-
-    console.log(
-      "Player is not ready yet."
-    );
+    console.log("Player is not ready yet.");
 
   }
 
@@ -1119,24 +871,17 @@ function playVideo(playerId) {
 
 function pauseVideo(playerId) {
 
-  const player =
-    players[playerId];
+  const player = players[playerId];
 
-  if (!player) {
-    return;
-  }
+  if (!player) return;
 
   try {
 
     player.pauseVideo();
 
-  }
+  } catch(error) {
 
-  catch (error) {
-
-    console.log(
-      "Player is not ready yet."
-    );
+    console.log("Player is not ready yet.");
 
   }
 
@@ -1145,12 +890,9 @@ function pauseVideo(playerId) {
 
 function rewindVideo(playerId) {
 
-  const player =
-    players[playerId];
+  const player = players[playerId];
 
-  if (!player) {
-    return;
-  }
+  if (!player) return;
 
   try {
 
@@ -1158,20 +900,13 @@ function rewindVideo(playerId) {
       player.getCurrentTime();
 
     player.seekTo(
-      Math.max(
-        0,
-        currentTime - 10
-      ),
+      Math.max(0,currentTime - 10),
       true
     );
 
-  }
+  } catch(error) {
 
-  catch (error) {
-
-    console.log(
-      "Rewind is not ready."
-    );
+    console.log("Rewind is not ready.");
 
   }
 
@@ -1180,12 +915,9 @@ function rewindVideo(playerId) {
 
 function forwardVideo(playerId) {
 
-  const player =
-    players[playerId];
+  const player = players[playerId];
 
-  if (!player) {
-    return;
-  }
+  if (!player) return;
 
   try {
 
@@ -1202,10 +934,7 @@ function forwardVideo(playerId) {
       duration &&
       newTime > duration
     ) {
-
-      newTime =
-        duration;
-
+      newTime = duration;
     }
 
     player.seekTo(
@@ -1213,35 +942,24 @@ function forwardVideo(playerId) {
       true
     );
 
-  }
+  } catch(error) {
 
-  catch (error) {
-
-    console.log(
-      "Fast forward is not ready."
-    );
+    console.log("Fast forward is not ready.");
 
   }
 
 }
 
 
-function toggleSound(
-  playerId,
-  buttonId
-) {
+function toggleSound(playerId,buttonId) {
 
   const player =
     players[playerId];
 
   const button =
-    document.getElementById(
-      buttonId
-    );
+    document.getElementById(buttonId);
 
-  if (!player || !button) {
-    return;
-  }
+  if (!player || !button) return;
 
   try {
 
@@ -1253,27 +971,19 @@ function toggleSound(
         playerVolumes[playerId] || 50
       );
 
-      button.innerText =
-        "MUTE";
+      button.innerText = "MUTE";
 
-    }
-
-    else {
+    } else {
 
       player.mute();
 
-      button.innerText =
-        "SOUND ON";
+      button.innerText = "SOUND ON";
 
     }
 
-  }
+  } catch(error) {
 
-  catch (error) {
-
-    console.log(
-      "Sound control is not ready."
-    );
+    console.log("Sound control is not ready.");
 
   }
 
@@ -1301,54 +1011,36 @@ function changeVolume(
   const player =
     players[playerId];
 
-  if (!player) {
-    return;
-  }
+  if (!player) return;
 
   try {
 
-    player.setVolume(
-      numericVolume
-    );
+    player.setVolume(numericVolume);
 
     const button =
-      document.getElementById(
-        buttonId
-      );
+      document.getElementById(buttonId);
 
     if (numericVolume === 0) {
 
       player.mute();
 
       if (button) {
-
-        button.innerText =
-          "SOUND ON";
-
+        button.innerText = "SOUND ON";
       }
 
-    }
-
-    else {
+    } else {
 
       player.unMute();
 
       if (button) {
-
-        button.innerText =
-          "MUTE";
-
+        button.innerText = "MUTE";
       }
 
     }
 
-  }
+  } catch(error) {
 
-  catch (error) {
-
-    console.log(
-      "Volume control is not ready."
-    );
+    console.log("Volume control is not ready.");
 
   }
 
@@ -1361,14 +1053,12 @@ function updateSoundButton(
 ) {
 
   const soundButtons = {
-
     player1: "sound1",
     player2: "sound2",
     player3: "sound3",
     player4: "sound4",
     player5: "sound5",
     player6: "sound6"
-
   };
 
   const button =
@@ -1377,10 +1067,7 @@ function updateSoundButton(
     );
 
   if (button) {
-
-    button.innerText =
-      text;
-
+    button.innerText = text;
   }
 
 }
@@ -1390,8 +1077,7 @@ function openDisclaimer() {
 
   document.getElementById(
     "disclaimerModal"
-  ).style.display =
-    "block";
+  ).style.display = "block";
 
   document.body.style.overflow =
     "hidden";
@@ -1403,8 +1089,7 @@ function closeDisclaimer() {
 
   document.getElementById(
     "disclaimerModal"
-  ).style.display =
-    "none";
+  ).style.display = "none";
 
   document.body.style.overflow =
     "auto";
@@ -1412,17 +1097,13 @@ function closeDisclaimer() {
 }
 
 
-function closeFromBackground(
-  event
-) {
+function closeFromBackground(event) {
 
   if (
     event.target.id ===
     "disclaimerModal"
   ) {
-
     closeDisclaimer();
-
   }
 
 }
@@ -1432,21 +1113,14 @@ document.addEventListener(
   "keydown",
   function(event) {
 
-    if (
-      event.key === "Escape"
-    ) {
-
+    if (event.key === "Escape") {
       closeDisclaimer();
-
     }
 
   }
 );
 
-
 </script>
 
-
 </body>
-
 </html>
